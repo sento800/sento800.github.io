@@ -1,19 +1,32 @@
-import Headers from "@/components/Header";
+"use client";
+import About from "@/components/About";
 import Introduction from "@/components/Introduction";
+import Projects from "@/components/Projects";
 import SkillList from "@/components/SkillList";
-import Social from "@/components/Social";
+import Lenis from "lenis";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      autoRaf: true,
+    });
+  });
+
   return (
-    <main className=" px-8">
-      <section className="my-16 relative block">
+    <main className="px-8">
+      <section className="relative block">
         <Introduction />
       </section>
-      <section className="mt-32 mb-16">
-        <h1 className="text-6xl text-center py-5 ">
-          My <span className="font-bold">Skills</span>
-        </h1>
+      <section className="mb-16 border-b-2">
         <SkillList />
+      </section>
+      <section className="mb-16 border-b-2">
+        <About />
+      </section>
+      <section>
+        <Projects />
       </section>
     </main>
   );

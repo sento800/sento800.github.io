@@ -3,6 +3,7 @@ import Logo from "./Logo";
 import NavBar from "./NavBar";
 
 function Header() {
+  
   return (
     <div className="my-6 mx-8 flex justify-between">
       <Logo />

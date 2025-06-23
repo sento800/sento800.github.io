@@ -19,7 +19,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth mdl-js">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased mx-20 font-sans`}
       >
