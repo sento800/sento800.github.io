@@ -5,8 +5,8 @@ const nextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
-  assetPrefix: isProd ? prefix : "",
-  basePath: isProd ? prefix : "",
+  assetPrefix: "",
+  basePath: "",
   output: "export",
 };
 
