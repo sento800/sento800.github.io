@@ -10,7 +10,7 @@ export default function Introduction() {
   ];
 
   return (
-    <div className="flex justify-center justify-start">
+    <div className="flex justify-start">
       <div id="introduction" className="flex items-center h-lvh">
         <div className="w-full">
           <div className="text-6xl">
@@ -27,12 +27,6 @@ export default function Introduction() {
             </p>
           </div>
           <MaskTest phrases={phrases} />
-          {/* <p className="text-gray-500">
-            I&apos;m Evren Shah Lorem Ipsum is simply dummy text of the printing
-            and typesetting industry. Lorem Ipsum has been the industry&apos;s
-            standard dummy text ever since the 1500s, when an unknown printer
-            took a galley of type and scrambled it to specimen book.
-          </p> */}
         </div>
         <div className="absolute right-0">
           <svg
