@@ -2,3 +2,9 @@
 * {
   scroll-behavior: smooth;
 }
+
+@layer components {
+  .show {
+    translate: 0;
+  }
+}

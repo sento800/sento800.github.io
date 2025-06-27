@@ -10,16 +10,22 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-  });
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <>
       <Header />
-      <main className="px-8 mx-20 ">
-        <section className="relative block">
+      <main className="px-8 mx-20 max-sm:px-4 max-sm:mx-0">
+        <section className="lg:relative block">
           <Introduction />
         </section>
         <section className="mb-16 border-b-2">

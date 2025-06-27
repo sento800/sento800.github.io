@@ -13,7 +13,7 @@ export default function Projects() {
 
   return (
     <div id="project" ref={container} className="relative mb-[500px]">
-      <h1 className="text-6xl text-center">
+      <h1 className="text-6xl text-center max-lg:text-4xl">
         <span className="font-bold">My</span> Projects
       </h1>
       <div>

@@ -21,22 +21,22 @@ export default function Card({ i, project, range, targetScale, progress }) {
     >
       {/* card */}
       <motion.div
-        className="flex flex-col relative  top-[20%] h-[500px] w-[1000px] p-[50px] rounded-3xl origin-top"
+        className="flex flex-col relative top-[10%] h-[500px] w-[1000px] p-[50px] rounded-3xl origin-top"
         style={{
           scale,
           backgroundColor: color,
           top: `calc(20% + ${i * 30}px)`,
         }}
       >
-        <h2 className="text-center m-0 text-3xl">{title}</h2>
+        <h2 className="text-center m-0 text-3xl max-lg:text-2xl">{title}</h2>
         {/* body */}
-        <div className="flex h-100% mt-[50px] gap-[50px] flex-1">
+        <div className="flex h-100% mt-[50px] gap-[50px] flex-1 max-lg:flex-col-reverse max-lg:gap-2 max-lg:mt-5">
           {/* description */}
-          <div className="w-[40%] relative top-[10%] ">
+          <div className="w-[40%] relative top-[10%] max-lg:w-full max-lg:top-0">
             <p className="text-xl first-letter:text-3xl">{description}</p>
             <span className="flex items-center gap-[5px] ">
               <Link
-                className="text-sm cursor-pointer"
+                className="text-lg cursor-pointer"
                 href={src}
                 target="_blank"
               >
@@ -59,7 +59,7 @@ export default function Card({ i, project, range, targetScale, progress }) {
           {/* imageContainer */}
           <motion.div
             style={{ opacity: scrollYProgress }}
-            className="relative w-[60%] h-full rounded-3xl overflow-hidden"
+            className="relative w-[60%] h-full rounded-3xl overflow-hidden max-lg:w-full"
           >
             {/* inner */}
             <div className="w-full h-full">

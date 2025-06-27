@@ -23,7 +23,7 @@ export default function MaskTest({ phrases }) {
     <div ref={ref}>
       {phrases.map((phrase, index) => {
         return (
-          <div key={index} className="overflow-hidden text-stone-500">
+          <div key={index} className=" text-stone-500 max-sm:text-2xl">
             <motion.p
               custom={index}
               variants={animation}
