@@ -415,27 +415,27 @@ export default function About() {
           </h1>
           <div className="text-zinc-500 text-xl">
             <p className="mb-4">
-              I&apos;m a passionate, self-proclaimed designer who specializes in
-              full stack development (React.js & Node.js). I am very
-              enthusiastic about bringing the technical and visual aspects of
-              digital products to life. User experience, pixel perfect design,
-              and writing clear, readable, highly performant code matters to me.
+              As a highly motivated and detail-oriented Frontend Developer, I
+              possess a strong foundation in React.js, dedicated to crafting
+              intuitive and visually compelling web experiences. My passion lies
+              in delivering pixel-perfect designs and developing clean,
+              efficient, and highly performant code that significantly enhances
+              user interaction.
             </p>
             <p className="mb-4">
-              I began my journey as a web developer in 2015, and since then,
-              I&apos;ve continued to grow and evolve as a developer, taking on
-              new challenges and learning the latest technologies along the way.
-              Now, in my early thirties, 7 years after starting my web
-              development journey, I&apos;m building cutting-edge web
-              applications using modern technologies such as Next.js,
-              TypeScript, Nestjs, Tailwindcss, Supabase and much more.
+              Having recently completed my intensive web development training, I
+              have diligently acquired a comprehensive understanding of modern
+              frontend technologies, including Next.js, TypeScript, and Tailwind
+              CSS. I am committed to continuous learning, readily adapting to
+              new challenges, and eager to contribute my skills to innovative
+              and user-centric web applications.
             </p>
             <p>
-              When I&apos;m not in full-on developer mode, you can find me
-              hovering around on twitter or on indie hacker, witnessing the
-              journey of early startups or enjoying some free time. You can
-              follow me on Twitter where I share tech-related bites and build in
-              public, or you can follow me on GitHub.
+              I am actively seeking opportunities to collaborate within dynamic
+              and experienced development teams, contribute to impactful
+              projects, and further refine my expertise. My objective is to
+              consistently deliver high-quality code while actively
+              participating in the successful evolution of digital products.
             </p>
           </div>
         </div>

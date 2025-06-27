@@ -66,7 +66,7 @@ export default function Card({ i, project, range, targetScale, progress }) {
               <Image
                 className="object-cover"
                 fill
-                src={`/img/${src}`}
+                src={`/img/projects/${src}`}
                 alt="image"
               />
             </div>

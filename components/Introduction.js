@@ -3,10 +3,11 @@ import Social from "./Social";
 
 export default function Introduction() {
   const phrases = [
-    "I'm Evren Shah Lorem Ipsum is simply dummy text of the ",
-    "printing and typesetting industry. Lorem Ipsum has been",
-    "the industry's standard dummy text ever since the 1500s, when",
-    "an unknown printer took a galley of type and scrambled it to specimen book.",
+    "I'm Nguyen Đinh Phu, a passionate Frontend Developer dedicated to",
+    "crafting intuitive and visually engaging web experiences. With a",
+    "keen eye for detail and a commitment to clean code, I specialize in",
+    "transforming complex ideas into seamless user interfaces. I'm driven ",
+    "to build modern, high-performance web applications that users love.",
   ];
 
   return (
@@ -16,7 +17,7 @@ export default function Introduction() {
         className="flex items-center h-lvh max-xl:flex-col-reverse justify-end max-xl:h-auto"
       >
         <div className="w-full max-xl:mt-12">
-          <div className="text-6xl max-lg:text-3xl ">
+          <div className="text-6xl max-lg:text-3xl lg:text-5xl">
             <p className="mb-4">
               Hello I&apos;am
               <span className="font-bold"> Dinh Phu</span>
@@ -29,6 +30,14 @@ export default function Introduction() {
               Based In <span className="font-bold">Viet Nam</span>
             </p>
           </div>
+          <p className="text-stone-500 md:hidden">
+            I&apos;m Nguyễn Đình Phú, a passionate Frontend Developer dedicated
+            to crafting intuitive and visually engaging web experiences. With a
+            keen eye for detail and a commitment to clean code, I specialize in
+            transforming complex ideas into seamless user interfaces. I&apos;m
+            driven to build modern, high-performance web applications that users
+            love.
+          </p>
           <MaskTest phrases={phrases} />
         </div>
         <div className="absolute right-0 max-xl:static ">
