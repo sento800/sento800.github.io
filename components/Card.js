@@ -37,7 +37,7 @@ export default function Card({ i, project, range, targetScale, progress }) {
             <span className="flex items-center gap-[5px] ">
               <Link
                 className="text-lg cursor-pointer"
-                href={src}
+                href={link}
                 target="_blank"
               >
                 See more
