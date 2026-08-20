@@ -1,28 +1,26 @@
 import Link from "next/link";
 
 function NavBar({ open }) {
-  console.log(open);
-
   return (
     <div
-      className={`py-3 transition-all max-lg:p-0 max-lg:absolute max-lg:top-16 max-lg:left-0 max-lg:right-0 ${
+      className={`transition-all duration-300 max-lg:absolute max-lg:top-[72px] max-lg:left-0 max-lg:right-0 max-lg:border-b max-lg:border-border max-lg:glass ${
         open
-          ? "max-lg:translate-x-0 max-lg:opacity-100 max-lg:block"
-          : "max-lg:translate-x-[100%] max-lg:opacity-0 max-lg:hidden"
-      } `}
+          ? "max-lg:translate-y-0 max-lg:opacity-100 max-lg:visible"
+          : "max-lg:-translate-y-4 max-lg:opacity-0 max-lg:invisible"
+      } lg:!visible lg:!opacity-100 lg:!translate-y-0`}
     >
-      <ul className="text-2xl gap-6 font-semibold flex max-lg:flex-col max-lg:bg-white max-lg:w-full max-lg:text-center items-center">
-        <li className="cursor-pointer p-4">
-          <Link href="/#about">About me</Link>
+      <ul className="text-base lg:text-sm font-medium flex max-lg:flex-col lg:flex-row max-lg:w-full lg:items-center gap-1 lg:gap-6 max-lg:p-4">
+        <li>
+          <Link href="/#about" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">About me</Link>
         </li>
-        <li className="cursor-pointer px-4 py-2">
-          <Link href="/#skill">Skills</Link>
+        <li>
+          <Link href="/#skill" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">Skills</Link>
         </li>
-        <li className="cursor-pointer px-4 py-2">
-          <Link href="/#project">Projects</Link>
+        <li>
+          <Link href="/#project" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">Projects</Link>
         </li>
-        <li className="cursor-pointer px-4 py-2">
-          <Link href="/#contact">Contact me</Link>
+        <li>
+          <Link href="/#contact" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">Contact me</Link>
         </li>
       </ul>
     </div>

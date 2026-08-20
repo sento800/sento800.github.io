@@ -2,7 +2,7 @@
 import { projects } from "@/assets/data-projects";
 import Card from "./Card";
 import { useScroll } from "framer-motion";
-import { use, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Projects() {
   const container = useRef(null);
@@ -12,11 +12,11 @@ export default function Projects() {
   });
 
   return (
-    <div id="project" ref={container} className="relative mb-[500px]">
-      <h1 className="text-6xl text-center max-lg:text-4xl">
-        <span className="font-bold">My</span> Projects
-      </h1>
-      <div>
+    <div id="project" ref={container} className="relative mt-20 mb-[200px] lg:mb-[400px]">
+      <h2 className="text-4xl lg:text-5xl text-center tracking-tight mb-20">
+        <span className="font-bold text-primary">My</span> Projects
+      </h2>
+      <div className="flex flex-col">
         {projects.map((project, index) => {
           const targetScale = 1 - (projects.length - index) * 0.05;
           return (

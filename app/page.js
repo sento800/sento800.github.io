@@ -14,7 +14,6 @@ function App() {
 
     function raf(time) {
       lenis.raf(time);
-
       requestAnimationFrame(raf);
     }
 
@@ -22,24 +21,27 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen selection:bg-primary selection:text-primary-foreground">
       <Header />
-      <main className="px-8 mx-20 max-sm:px-4 max-sm:mx-0">
-        <section className="lg:relative block">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pt-24">
+        <section className="relative block py-12 lg:py-20">
           <Introduction />
         </section>
-        <section className="mb-16 border-b-2">
+        
+        <section className="py-12 lg:py-20 border-t border-border">
           <SkillList />
         </section>
-        <section className="mb-16 border-b-2">
+        
+        <section className="py-12 lg:py-20 border-t border-border">
           <About />
         </section>
-        <section>
+        
+        <section className="py-12 lg:py-20 border-t border-border">
           <Projects />
         </section>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

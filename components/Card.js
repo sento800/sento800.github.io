@@ -14,35 +14,42 @@ export default function Card({ i, project, range, targetScale, progress }) {
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    // cardContainer
     <div
       ref={cardContainerRef}
-      className={`h-lvh flex justify-center sticky top-0`}
+      className={`h-[100vh] flex items-center justify-center sticky top-0 px-4`}
     >
-      {/* card */}
       <motion.div
-        className="flex flex-col relative top-[10%] h-[500px] w-[1000px] p-[50px] rounded-3xl origin-top"
+        className="glass-card flex flex-col relative w-full max-w-[1000px] h-[550px] max-lg:h-auto p-8 lg:p-12 rounded-3xl origin-top shadow-2xl border border-white/10 overflow-hidden"
         style={{
           scale,
-          backgroundColor: color,
-          top: `calc(20% + ${i * 30}px)`,
+          top: `calc(10vh + ${i * 30}px)`,
         }}
       >
-        <h2 className="text-center m-0 text-3xl max-lg:text-2xl">{title}</h2>
-        {/* body */}
-        <div className="flex h-100% mt-[50px] gap-[50px] flex-1 max-lg:flex-col-reverse max-lg:gap-2 max-lg:mt-5">
-          {/* description */}
-          <div className="w-[40%] relative top-[10%] max-lg:w-full max-lg:top-0">
-            <p className="text-xl first-letter:text-3xl">{description}</p>
-            <span className="flex items-center gap-[5px] ">
-              <Link
-                className="text-lg cursor-pointer"
-                href={link}
-                target="_blank"
-              >
-                See more
-              </Link>
+        {/* Subtle accent glow based on project color */}
+        <div 
+          className="absolute top-0 left-0 w-full h-2 opacity-50"
+          style={{ backgroundColor: color }}
+        />
+        <div 
+          className="absolute -top-20 -right-20 w-64 h-64 rounded-full blur-[100px] opacity-20 pointer-events-none"
+          style={{ backgroundColor: color }}
+        />
+        
+        <h2 className="text-3xl lg:text-4xl font-bold tracking-tight z-10">{title}</h2>
+        
+        <div className="flex h-full mt-8 gap-8 lg:gap-16 flex-1 max-lg:flex-col-reverse z-10">
+          <div className="w-full lg:w-[45%] flex flex-col justify-center">
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8">
+              {description}
+            </p>
+            <Link
+              className="inline-flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors group w-fit"
+              href={link}
+              target="_blank"
+            >
+              See more
               <svg
+                className="transform group-hover:translate-x-2 transition-transform duration-300"
                 width="22"
                 height="12"
                 viewBox="0 0 22 12"
@@ -51,23 +58,22 @@ export default function Card({ i, project, range, targetScale, progress }) {
               >
                 <path
                   d="M21.5303 6.53033C21.8232 6.23744 21.8232 5.76256 21.5303 5.46967L16.7574 0.696699C16.4645 0.403806 15.9896 0.403806 15.6967 0.696699C15.4038 0.989592 15.4038 1.46447 15.6967 1.75736L19.9393 6L15.6967 10.2426C15.4038 10.5355 15.4038 11.0104 15.6967 11.3033C15.9896 11.5962 16.4645 11.5962 16.7574 11.3033L21.5303 6.53033ZM0 6.75L21 6.75V5.25L0 5.25L0 6.75Z"
-                  fill="black"
+                  fill="currentColor"
                 />
               </svg>
-            </span>
+            </Link>
           </div>
-          {/* imageContainer */}
+          
           <motion.div
             style={{ opacity: scrollYProgress }}
-            className="relative w-[60%] h-full rounded-3xl overflow-hidden max-lg:w-full"
+            className="relative w-full lg:w-[55%] h-[300px] lg:h-full rounded-2xl overflow-hidden shadow-lg border border-white/5"
           >
-            {/* inner */}
-            <div className="w-full h-full">
+            <div className="w-full h-full transform hover:scale-105 transition-transform duration-700 ease-out">
               <Image
                 className="object-cover"
                 fill
                 src={`/img/projects/${src}`}
-                alt="image"
+                alt={`${title} project screenshot`}
               />
             </div>
           </motion.div>
