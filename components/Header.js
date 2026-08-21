@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import NavBar from "./NavBar";
 import { useState } from "react";
 
-function Header() {
+function Header({ dict, lang }) {
   const [openNavMobile, setOpenNavMobile] = useState(false);
   function handleClick() {
     setOpenNavMobile((open) => !open);
@@ -14,11 +14,16 @@ function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-16 lg:h-20 flex items-center justify-between">
         <Logo />
-        <NavBar open={openNavMobile} />
+        <NavBar open={openNavMobile} dict={dict} lang={lang} />
         <div className="flex items-center gap-4">
-          <Link href="/" className="hidden lg:block">
+          <div className="flex gap-2 text-sm font-medium">
+            <Link href="/en" className={`hover:text-primary transition-colors ${lang === 'en' ? 'text-primary' : 'text-muted-foreground'}`}>EN</Link>
+            <span className="text-muted-foreground">|</span>
+            <Link href="/vi" className={`hover:text-primary transition-colors ${lang === 'vi' ? 'text-primary' : 'text-muted-foreground'}`}>VI</Link>
+          </div>
+          <Link href={`/${lang}`} className="hidden lg:block">
             <Button style="primary" magnetic={true}>
-              Download My CV
+              {dict?.nav?.download_cv || "Download My CV"}
               <span className="ml-2 inline-block">
                 <svg
                   width="18"

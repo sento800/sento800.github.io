@@ -1,37 +1,23 @@
 "use client";
-import About from "@/components/About";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Introduction from "@/components/Introduction";
-import Projects from "@/components/Projects";
-import SkillList from "@/components/SkillList";
-import Lenis from "lenis";
-import { useEffect } from "react";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
-function App() {
+export default function RootPage() {
+  const router = useRouter();
+  
   useEffect(() => {
-    const lenis = new Lenis();
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    // Basic redirect to the default language or user preferred language
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith('vi')) {
+      router.push('/vi');
+    } else {
+      router.push('/en');
     }
-
-    requestAnimationFrame(raf);
-  }, []);
+  }, [router]);
 
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-primary-foreground">
-      <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <Introduction />
-        <SkillList />
-        <About />
-        <Projects />
-      </main>
-      <Footer />
+    <div className="min-h-screen flex items-center justify-center bg-background text-foreground">
+      {/* Optional loading state */}
     </div>
   );
 }
-
-export default App;

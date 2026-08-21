@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-function NavBar({ open }) {
+function NavBar({ open, dict, lang }) {
   return (
     <div
       className={`transition-all duration-300 max-lg:absolute max-lg:top-[72px] max-lg:left-0 max-lg:right-0 max-lg:border-b max-lg:border-border max-lg:glass ${
@@ -11,16 +11,16 @@ function NavBar({ open }) {
     >
       <ul className="text-base lg:text-sm font-medium flex max-lg:flex-col lg:flex-row max-lg:w-full lg:items-center gap-1 lg:gap-6 max-lg:p-4">
         <li>
-          <Link href="/#about" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">About me</Link>
+          <Link href={`/${lang || 'vi'}#about`} className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">{dict?.nav?.about || "About me"}</Link>
         </li>
         <li>
-          <Link href="/#skill" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">Skills</Link>
+          <Link href={`/${lang || 'vi'}#skill`} className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">{dict?.nav?.skills || "Skills"}</Link>
         </li>
         <li>
-          <Link href="/#project" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">Projects</Link>
+          <Link href={`/${lang || 'vi'}#project`} className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">{dict?.nav?.projects || "Projects"}</Link>
         </li>
         <li>
-          <Link href="/#contact" className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">Contact me</Link>
+          <Link href={`/${lang || 'vi'}#contact`} className="block px-4 py-3 lg:p-0 text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-white/5 lg:hover:bg-transparent">{dict?.nav?.contact || "Contact me"}</Link>
         </li>
       </ul>
     </div>

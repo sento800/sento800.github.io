@@ -1,14 +1,16 @@
 import MaskTest from "./MaskText";
 import Social from "./Social";
 
-export default function Introduction() {
-  const phrases = [
+export default function Introduction({ dict }) {
+  const fallbackPhrases = [
     "I'm Nguyen Đinh Phu, a passionate Frontend Developer dedicated to",
     "crafting intuitive and visually engaging web experiences. With a",
     "keen eye for detail and a commitment to clean code, I specialize in",
     "transforming complex ideas into seamless user interfaces. I'm driven ",
     "to build modern, high-performance web applications that users love.",
   ];
+  
+  const phrases = dict?.hero?.phrases || fallbackPhrases;
 
   return (
     <section id="introduction" className="min-h-screen flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 w-full pt-20 pb-10">
@@ -17,26 +19,21 @@ export default function Introduction() {
       >
         <h1 className="text-5xl sm:text-6xl lg:text-7xl tracking-tight flex flex-col font-outfit">
           <span className="mb-2 lg:mb-4 text-muted-foreground font-light">
-            Hello I&apos;m
+            {dict?.hero?.hello || "Hello I'm"}
           </span>
           <span className="font-extrabold mb-2 lg:mb-4 text-foreground">
             Dinh Phu
           </span>
           <span className="font-extrabold mb-4 text-gradient">
-            Front-end Developer
+            {dict?.hero?.role || "Front-end Developer"}
           </span>
           <span className="text-2xl sm:text-3xl text-muted-foreground mt-4 font-light">
-            Based In <span className="font-semibold text-foreground">Viet Nam</span>
+            {dict?.hero?.based_in || "Based In"} <span className="font-semibold text-foreground">{dict?.hero?.country || "Viet Nam"}</span>
           </span>
         </h1>
         
         <p className="text-muted-foreground md:hidden leading-relaxed">
-          I&apos;m Nguyễn Đình Phú, a passionate Frontend Developer dedicated
-          to crafting intuitive and visually engaging web experiences. With a
-          keen eye for detail and a commitment to clean code, I specialize in
-          transforming complex ideas into seamless user interfaces. I&apos;m
-          driven to build modern, high-performance web applications that users
-          love.
+          {dict?.hero?.description || fallbackPhrases.join(" ")}
         </p>
         
         <div className="hidden md:block">

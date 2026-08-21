@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function SkillList() {
+export default function SkillList({ dict }) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -78,7 +78,7 @@ export default function SkillList() {
   return (
     <section id="skill" className="min-h-screen flex flex-col items-center justify-center gap-12 w-full border-t border-border py-20">
       <h2 className="text-4xl lg:text-5xl tracking-tight font-outfit">
-        My <span className="font-extrabold text-gradient">Skills</span>
+        {dict?.skills?.title_part1 || "My"} <span className="font-extrabold text-gradient">{dict?.skills?.title_part2 || "Skills"}</span>
       </h2>
       
       <motion.div

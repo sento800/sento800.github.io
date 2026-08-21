@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "contact": "Liên hệ",
+    "download_cv": "Tải CV của tôi"
+  },
+  "hero": {
+    "hello": "Xin chào, tôi là",
+    "role": "Lập trình viên Front-end",
+    "based_in": "Làm việc tại",
+    "country": "Việt Nam",
+    "description": "Tôi là Nguyễn Đình Phú, một Lập trình viên Frontend đam mê sáng tạo những trải nghiệm web trực quan và sinh động. Với sự tỉ mỉ và cam kết viết code sạch, tôi chuyên biến những ý tưởng phức tạp thành giao diện người dùng mượt mà. Động lực của tôi là xây dựng các ứng dụng web hiện đại, hiệu suất cao mà người dùng yêu thích.",
+    "phrases": [
+      "Tôi là Nguyễn Đình Phú, Lập trình viên Frontend đam mê",
+      "sáng tạo những trải nghiệm web trực quan và sinh động. Với sự",
+      "tỉ mỉ và cam kết viết code sạch, tôi chuyên biến những",
+      "ý tưởng phức tạp thành giao diện người dùng mượt mà. Tôi khao khát",
+      "xây dựng các ứng dụng web hiện đại, hiệu suất cao mà người dùng yêu thích."
+    ]
+  },
+  "about": {
+    "title_part1": "Về",
+    "title_part2": "Tôi",
+    "p1": "Là một Lập trình viên Frontend có chí tiến thủ và tỉ mỉ, tôi sở hữu nền tảng vững chắc về React.js, tận tâm thiết kế những trải nghiệm web trực quan và hấp dẫn. Niềm đam mê của tôi nằm ở việc tạo ra các thiết kế hoàn hảo (pixel-perfect) và phát triển mã nguồn sạch, hiệu quả, hiệu năng cao giúp tăng cường đáng kể tương tác của người dùng.",
+    "p2": "Gần đây, sau khi hoàn thành khóa đào tạo chuyên sâu về phát triển web, tôi đã nỗ lực tiếp thu kiến thức toàn diện về các công nghệ frontend hiện đại, bao gồm Next.js, TypeScript và Tailwind CSS. Tôi cam kết học hỏi không ngừng, sẵn sàng thích ứng với những thử thách mới và mong muốn đóng góp kỹ năng của mình cho các ứng dụng web sáng tạo, lấy người dùng làm trung tâm.",
+    "p3": "Tôi đang tích cực tìm kiếm cơ hội hợp tác trong các nhóm phát triển năng động và giàu kinh nghiệm, đóng góp vào các dự án có tầm ảnh hưởng và rèn luyện thêm chuyên môn. Mục tiêu của tôi là liên tục cung cấp mã nguồn chất lượng cao, đồng thời tham gia tích cực vào sự phát triển thành công của các sản phẩm kỹ thuật số."
+  },
+  "skills": {
+    "title_part1": "Kỹ năng",
+    "title_part2": "Của Tôi"
+  },
+  "projects": {
+    "title_part1": "Các",
+    "title_part2": "Dự án",
+    "list": [
+      {
+        "title": "Trang Web Portfolio Cá Nhân",
+        "description": "Trang web portfolio cá nhân này được phát triển bằng Next.js, React.js và Tailwind CSS. Mục đích cốt lõi của dự án là thể hiện hiệu quả kỹ năng lập trình và các dự án của tôi thông qua giao diện đáp ứng (responsive) và trực quan sinh động.",
+        "src": "portfolio.png",
+        "link": "https://github.com/sento800/sento800.github.io",
+        "color": "#397a4c"
+      },
+      {
+        "title": "Papery",
+        "description": "Là Lập trình viên Frontend trong một nhóm ba người, tôi đã phát triển 'Papery', một chatbot chuyên nghiên cứu tài liệu bằng Next.js, React.js và TypeScript. Các đóng góp của tôi bao gồm thiết kế UI/UX, tích hợp API và tối ưu hóa hiệu suất, cung cấp các tính năng như hỗ trợ đa ngôn ngữ và dịch tài liệu chính xác.",
+        "src": "papery.png",
+        "link": "https://github.com/QuanMofii/PAPERY",
+        "color": "#569358"
+      },
+      {
+        "title": "Face-recognition",
+        "description": "Dự án này cung cấp hệ thống nhận diện khuôn mặt theo thời gian thực có khả năng phân biệt và nhận dạng các cá nhân có trong cơ sở dữ liệu xác định trước. Được phát triển bằng Python, giải pháp cung cấp khả năng nhận dạng người một cách mạnh mẽ và hiệu quả.",
+        "src": "face-recognition.png",
+        "link": "https://github.com/sento800/face-recognition",
+        "color": "#77c063"
+      }
+    ]
+  },
+  "footer": {
+    "thank_you": "Cảm Ơn",
+    "copyright": "©Bản quyền thuộc về Sento",
+    "about": "Giới thiệu",
+    "home": "Trang chủ",
+    "contact": "Liên hệ",
+    "email_label": "Email Công Việc:",
+    "zalo_label": "Tin Nhắn Zalo"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "about": "About me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact me",
+    "download_cv": "Download My CV"
+  },
+  "hero": {
+    "hello": "Hello I'm",
+    "role": "Front-end Developer",
+    "based_in": "Based In",
+    "country": "Viet Nam",
+    "description": "I'm Nguyễn Đình Phú, a passionate Frontend Developer dedicated to crafting intuitive and visually engaging web experiences. With a keen eye for detail and a commitment to clean code, I specialize in transforming complex ideas into seamless user interfaces. I'm driven to build modern, high-performance web applications that users love.",
+    "phrases": [
+      "I'm Nguyen Đinh Phu, a passionate Frontend Developer dedicated to",
+      "crafting intuitive and visually engaging web experiences. With a",
+      "keen eye for detail and a commitment to clean code, I specialize in",
+      "transforming complex ideas into seamless user interfaces. I'm driven ",
+      "to build modern, high-performance web applications that users love."
+    ]
+  },
+  "about": {
+    "title_part1": "About",
+    "title_part2": "Me",
+    "p1": "As a highly motivated and detail-oriented Frontend Developer, I possess a strong foundation in React.js, dedicated to crafting intuitive and visually compelling web experiences. My passion lies in delivering pixel-perfect designs and developing clean, efficient, and highly performant code that significantly enhances user interaction.",
+    "p2": "Having recently completed my intensive web development training, I have diligently acquired a comprehensive understanding of modern frontend technologies, including Next.js, TypeScript, and Tailwind CSS. I am committed to continuous learning, readily adapting to new challenges, and eager to contribute my skills to innovative and user-centric web applications.",
+    "p3": "I am actively seeking opportunities to collaborate within dynamic and experienced development teams, contribute to impactful projects, and further refine my expertise. My objective is to consistently deliver high-quality code while actively participating in the successful evolution of digital products."
+  },
+  "skills": {
+    "title_part1": "My",
+    "title_part2": "Skills"
+  },
+  "projects": {
+    "title_part1": "My",
+    "title_part2": "Projects",
+    "list": [
+      {
+        "title": "Personal Portfolio Website",
+        "description": "This personal portfolio website was developed using Next.js, React.js, and Tailwind CSS. Its core purpose is to effectively showcase my development skills and projects through a responsive and visually appealing interface.",
+        "src": "portfolio.png",
+        "link": "https://github.com/sento800/sento800.github.io",
+        "color": "#397a4c"
+      },
+      {
+        "title": "Papery",
+        "description": "As a Frontend Developer in a three-person team, I developed 'Papery,' a specialized chatbot for document research using Next.js, React.js, and TypeScript. My contributions included UI/UX design, API integration, and performance optimization, delivering features like multi-language support and accurate document translation.",
+        "src": "papery.png",
+        "link": "https://github.com/QuanMofii/PAPERY",
+        "color": "#569358"
+      },
+      {
+        "title": "Face-recognition",
+        "description": "This project delivers a real-time facial recognition system capable of distinguishing and identifying individuals present in a predefined database. Developed with Python, the solution provides robust and efficient person recognition capabilities.",
+        "src": "face-recognition.png",
+        "link": "https://github.com/sento800/face-recognition",
+        "color": "#77c063"
+      }
+    ]
+  },
+  "footer": {
+    "thank_you": "Thank You",
+    "copyright": "©Copyright by Sento",
+    "about": "About",
+    "home": "Home",
+    "contact": "Contact",
+    "email_label": "Email For Work:",
+    "zalo_label": "Zalo Message"
+  }
+}
