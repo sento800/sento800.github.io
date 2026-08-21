@@ -85,7 +85,8 @@
   
   /* Mesh Gradient Orbs Animation */
   .mesh-orb {
-    @apply absolute rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[100px] opacity-60 dark:opacity-40 animate-blob;
+    @apply absolute rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[100px] opacity-60 dark:opacity-40;
+    animation: blob 7s infinite;
   }
   .animation-delay-2000 {
     animation-delay: 2s;
