@@ -12,26 +12,65 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Nguyễn Đình Phú | Frontend Developer",
-    template: "%s | Nguyễn Đình Phú",
+    default: "Nguyễn Đình Phú | Chuyên gia Lập trình Frontend",
+    template: "%s | Nguyễn Đình Phú (Sento)",
   },
-  description: "Portfolio của Nguyễn Đình Phú (Sento) - Frontend Developer chuyên thiết kế và xây dựng ứng dụng web trực quan, hiệu năng cao với React.js và Next.js.",
-  keywords: ["Nguyễn Đình Phú", "Nguyen Dinh Phu", "Frontend Developer", "React", "Next.js", "Portfolio Nguyễn Đình Phú", "Web Developer", "Sento", "Lập trình viên Frontend"],
-  authors: [{ name: "Nguyễn Đình Phú" }],
+  description: "Khám phá Portfolio của Nguyễn Đình Phú (Sento) - Lập trình viên Frontend với đam mê kiến tạo trải nghiệm người dùng đột phá. Chuyên sâu React.js, Next.js, và UI/UX Design.",
+  keywords: [
+    "Nguyễn Đình Phú", 
+    "Nguyen Dinh Phu", 
+    "Sento",
+    "Frontend Developer", 
+    "React.js Developer Việt Nam", 
+    "Chuyên gia Next.js", 
+    "Web Developer Sài Gòn", 
+    "Lập trình viên Frontend",
+    "Thiết kế UI/UX",
+    "Portfolio Lập trình viên"
+  ],
+  authors: [{ name: "Nguyễn Đình Phú", url: "https://sento800.github.io" }],
   creator: "Nguyễn Đình Phú",
+  publisher: "Nguyễn Đình Phú",
+  alternates: {
+    canonical: "https://sento800.github.io",
+  },
   metadataBase: new URL('https://sento800.github.io'),
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName: "Phú",
+    lastName: "Nguyễn Đình",
+    username: "sento800",
+    gender: "male",
     locale: "vi_VN",
     url: "https://sento800.github.io",
-    title: "Nguyễn Đình Phú | Frontend Developer",
-    description: "Portfolio của Nguyễn Đình Phú (Sento) - Frontend Developer chuyên thiết kế và xây dựng ứng dụng web trực quan, hiệu năng cao.",
+    title: "Nguyễn Đình Phú | Chuyên gia Lập trình Frontend",
+    description: "Khám phá Portfolio của Nguyễn Đình Phú (Sento). Cùng tôi kiến tạo những trải nghiệm người dùng đột phá với React.js và Next.js.",
     siteName: "Nguyễn Đình Phú Portfolio",
+    images: [
+      {
+        url: "/img/about.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Nguyễn Đình Phú - Frontend Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nguyễn Đình Phú | Frontend Developer",
-    description: "Portfolio của Nguyễn Đình Phú (Sento) - Frontend Developer chuyên thiết kế và xây dựng ứng dụng web trực quan, hiệu năng cao.",
+    title: "Nguyễn Đình Phú | Chuyên gia Lập trình Frontend",
+    description: "Khám phá Portfolio của Nguyễn Đình Phú (Sento). Cùng tôi kiến tạo những trải nghiệm người dùng đột phá với React.js và Next.js.",
+    images: ["/img/about.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
