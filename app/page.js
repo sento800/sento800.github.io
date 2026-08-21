@@ -23,22 +23,11 @@ function App() {
   return (
     <div className="min-h-screen selection:bg-primary selection:text-primary-foreground">
       <Header />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pt-24">
-        <section className="relative block py-12 lg:py-20">
-          <Introduction />
-        </section>
-        
-        <section className="py-12 lg:py-20 border-t border-border">
-          <SkillList />
-        </section>
-        
-        <section className="py-12 lg:py-20 border-t border-border">
-          <About />
-        </section>
-        
-        <section className="py-12 lg:py-20 border-t border-border">
-          <Projects />
-        </section>
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        <Introduction />
+        <SkillList />
+        <About />
+        <Projects />
       </main>
       <Footer />
     </div>

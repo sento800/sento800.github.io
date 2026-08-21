@@ -12,7 +12,7 @@ export default function Projects() {
   });
 
   return (
-    <div id="project" ref={container} className="relative mt-20 mb-[200px] lg:mb-[400px]">
+    <section id="project" ref={container} className="relative min-h-screen w-full border-t border-border mt-20 pt-20 mb-[200px] lg:mb-[400px]">
       <h2 className="text-4xl lg:text-5xl text-center tracking-tight mb-20">
         <span className="font-bold text-primary">My</span> Projects
       </h2>
@@ -31,6 +31,6 @@ export default function Projects() {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }

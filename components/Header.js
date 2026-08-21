@@ -17,7 +17,7 @@ function Header() {
         <NavBar open={openNavMobile} />
         <div className="flex items-center gap-4">
           <Link href="/" className="hidden lg:block">
-            <Button style="primary">
+            <Button style="primary" magnetic={true}>
               Download My CV
               <span className="ml-2 inline-block">
                 <svg

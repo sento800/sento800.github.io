@@ -76,9 +76,9 @@ export default function SkillList() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-12 pt-10">
-      <h2 id="skill" className="text-4xl lg:text-5xl tracking-tight">
-        My <span className="font-bold text-primary">Skills</span>
+    <section id="skill" className="min-h-screen flex flex-col items-center justify-center gap-12 w-full border-t border-border py-20">
+      <h2 className="text-4xl lg:text-5xl tracking-tight font-outfit">
+        My <span className="font-extrabold text-gradient">Skills</span>
       </h2>
       
       <motion.div
@@ -93,9 +93,9 @@ export default function SkillList() {
             <motion.div 
               key={index} 
               variants={itemVariants}
-              className="glass-card aspect-square flex flex-col justify-center items-center group hover:border-primary/50 transition-colors duration-300"
+              className="glass-card aspect-square flex flex-col justify-center items-center group hover:border-primary/30 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] hover:-translate-y-2 transition-all duration-500"
             >
-              <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className="mb-4 transform group-hover:scale-125 transition-transform duration-500">
                 {skill.svg}
               </div>
               <p className="font-medium text-muted-foreground group-hover:text-foreground transition-colors duration-300">
@@ -105,6 +105,6 @@ export default function SkillList() {
           ))}
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 }

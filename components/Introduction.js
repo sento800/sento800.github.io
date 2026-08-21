@@ -11,25 +11,24 @@ export default function Introduction() {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh] gap-12 lg:gap-8 pt-10">
+    <section id="introduction" className="min-h-screen flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 w-full pt-20 pb-10">
       <div
-        id="introduction"
         className="w-full lg:w-1/2 flex flex-col justify-center space-y-8 order-2 lg:order-1"
       >
-        <div className="text-4xl sm:text-5xl lg:text-6xl tracking-tight">
-          <p className="mb-2 lg:mb-4 text-muted-foreground">
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl tracking-tight flex flex-col font-outfit">
+          <span className="mb-2 lg:mb-4 text-muted-foreground font-light">
             Hello I&apos;m
-          </p>
-          <p className="font-bold mb-2 lg:mb-4 text-foreground">
+          </span>
+          <span className="font-extrabold mb-2 lg:mb-4 text-foreground">
             Dinh Phu
-          </p>
-          <p className="font-bold mb-4 text-primary">
+          </span>
+          <span className="font-extrabold mb-4 text-gradient">
             Front-end Developer
-          </p>
-          <p className="text-xl sm:text-2xl text-muted-foreground mt-4">
+          </span>
+          <span className="text-2xl sm:text-3xl text-muted-foreground mt-4 font-light">
             Based In <span className="font-semibold text-foreground">Viet Nam</span>
-          </p>
-        </div>
+          </span>
+        </h1>
         
         <p className="text-muted-foreground md:hidden leading-relaxed">
           I&apos;m Nguyễn Đình Phú, a passionate Frontend Developer dedicated
@@ -222,6 +221,6 @@ export default function Introduction() {
           </defs>
         </svg>
       </div>
-    </div>
+    </section>
   );
 }
