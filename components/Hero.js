@@ -14,7 +14,7 @@ export default function Hero({ dict, lang = "vi" }) {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] flex flex-col justify-center pt-28 pb-16 lg:pt-36 lg:pb-24 overflow-hidden"
+      className="relative min-h-[90vh] flex flex-col justify-center pt-28 pb-16 lg:pt-36 lg:pb-24"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Value Proposition & CTAs */}
@@ -190,12 +190,12 @@ export default function Hero({ dict, lang = "vi" }) {
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-6 -left-6 bg-slate-900/90 border border-sky-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md"
+            className="absolute -bottom-5 left-2 sm:-left-2 bg-slate-900/95 border border-sky-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
           >
-            <div className="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
+            <div className="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold shrink-0">
               ⚡
             </div>
-            <div>
+            <div className="whitespace-nowrap">
               <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
               <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
             </div>
@@ -204,12 +204,12 @@ export default function Hero({ dict, lang = "vi" }) {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -top-6 -right-4 bg-slate-900/90 border border-indigo-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md"
+            className="absolute -top-5 right-2 sm:right-0 bg-slate-900/95 border border-indigo-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
           >
-            <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+            <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold shrink-0">
               🎨
             </div>
-            <div>
+            <div className="whitespace-nowrap">
               <div className="text-xs font-bold text-white">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
               <div className="text-[10px] text-slate-400">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
             </div>
