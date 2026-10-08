@@ -1,85 +1,108 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function About({ dict }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const animation = {
-    initial: { x: "-100%", opacity: 0 },
-    enter: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-  };
-
-  const textAnimation = {
-    initial: { x: "100%", opacity: 0 },
-    enter: {
-      x: "0",
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.33, 1, 0.68, 1],
-        delay: 0.2,
-      },
-    },
-  };
+export default function About({ dict, lang = "vi" }) {
+  const quickFacts = dict?.about?.quick_facts || [
+    { label: "Location", val: "Vietnam (Available for Global Remote)" },
+    { label: "Specialization", val: "React.js, Next.js, UI/UX" },
+    { label: "Languages", val: "Vietnamese, English" },
+    { label: "Status", val: "Open for New Projects" },
+  ];
 
   return (
-    <section
-      ref={ref}
-      id="about"
-      className="min-h-screen flex items-center justify-center w-full overflow-hidden border-t border-border py-20"
-    >
-      <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 w-full max-w-6xl">
+    <section id="about" className="py-24 border-t border-white/10 relative">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Left: Visual Image Frame */}
         <motion.div
-          initial="initial"
-          variants={animation}
-          animate={isInView ? "enter" : ""}
-          className="w-full lg:w-1/2 flex justify-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="lg:col-span-5 relative flex justify-center"
         >
-          <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[480px] lg:h-[480px] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-border/50">
-            <Image
-              src="/img/about.jpg"
-              alt="Nguyễn Đình Phú - Frontend Developer Workspace"
-              fill
-              className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
-            />
+          <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden p-2 bg-gradient-to-br from-sky-400/30 via-indigo-500/20 to-purple-500/30 border border-white/10 shadow-2xl">
+            <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-950">
+              <Image
+                src="/img/about.jpg"
+                alt="Nguyen Dinh Phu (Sento) - Frontend Developer"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#080c14]/80 via-transparent to-transparent" />
+            </div>
+
+            {/* Floating Info Pill */}
+            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-slate-900/90 border border-white/10 backdrop-blur-md flex items-center justify-between">
+              <div>
+                <div className="text-xs text-slate-400 font-medium">Nguyen Dinh Phu</div>
+                <div className="text-sm font-bold text-white">Frontend Specialist</div>
+              </div>
+              <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Remote
+              </span>
+            </div>
           </div>
         </motion.div>
-        
-        <motion.div 
-          initial="initial"
-          variants={textAnimation}
-          animate={isInView ? "enter" : ""}
-          className="w-full lg:w-1/2 flex flex-col"
+
+        {/* Right: Story & Details */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="lg:col-span-7 flex flex-col"
         >
-          <div className="glass-card p-8 md:p-12 shadow-2xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
-            <div className="absolute bottom-0 left-0 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl -ml-10 -mb-10 pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-50"></div>
-            
-            <h2 className="text-4xl md:text-5xl tracking-tight mb-8 font-outfit">
-              {dict?.about?.title_part1 || "About"} <span className="font-extrabold text-gradient">{dict?.about?.title_part2 || "Me"}</span>
-            </h2>
-            
-            <div className="text-muted-foreground text-lg leading-relaxed space-y-6 relative z-10 font-light">
-              <p>
-                {dict?.about?.p1 || "As a highly motivated and detail-oriented Frontend Developer, I possess a strong foundation in React.js, dedicated to crafting intuitive and visually compelling web experiences. My passion lies in delivering pixel-perfect designs and developing clean, efficient, and highly performant code that significantly enhances user interaction."}
-              </p>
-              <p>
-                {dict?.about?.p2 || "Having recently completed my intensive web development training, I have diligently acquired a comprehensive understanding of modern frontend technologies, including Next.js, TypeScript, and Tailwind CSS. I am committed to continuous learning, readily adapting to new challenges, and eager to contribute my skills to innovative and user-centric web applications."}
-              </p>
-              <p>
-                {dict?.about?.p3 || "I am actively seeking opportunities to collaborate within dynamic and experienced development teams, contribute to impactful projects, and further refine my expertise. My objective is to consistently deliver high-quality code while actively participating in the successful evolution of digital products."}
-              </p>
-            </div>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4 w-fit">
+            {dict?.about?.badge || "About Me"}
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-outfit mb-6">
+            {dict?.about?.title_part1 || "My"}{" "}
+            <span className="text-gradient">{dict?.about?.title_part2 || "Background"}</span>
+          </h2>
+
+          <div className="space-y-4 text-slate-300 text-base leading-relaxed mb-8">
+            <p>
+              {dict?.about?.p1 ||
+                "I'm Nguyen Dinh Phu, a Frontend Developer dedicated to engineering web experiences that marry visual elegance with blazingly fast technical performance."}
+            </p>
+            <p>
+              {dict?.about?.p2 ||
+                "I continuously integrate the latest modern web standards, keeping user satisfaction and business conversion at the heart of every project I touch."}
+            </p>
+            <p>
+              {dict?.about?.p3 ||
+                "I am currently accepting remote freelance contracts, collaborating with forward-thinking startups, agencies, and businesses looking for top-tier frontend execution."}
+            </p>
+          </div>
+
+          {/* Quick Facts Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-8">
+            {quickFacts.map((fact, fIdx) => (
+              <div
+                key={fIdx}
+                className="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 flex flex-col"
+              >
+                <span className="text-xs text-slate-400 font-medium">{fact.label}</span>
+                <span className="text-sm font-semibold text-white mt-0.5">{fact.val}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Action Button */}
+          <div className="flex items-center gap-4">
+            <Link
+              href={`/${lang}#contact`}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-slate-950 bg-gradient-to-r from-sky-400 to-indigo-300 hover:opacity-95 shadow-lg shadow-sky-500/20 transition-all duration-200"
+            >
+              <span>{dict?.nav?.hire_me || "Work With Me"}</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
         </motion.div>
       </div>

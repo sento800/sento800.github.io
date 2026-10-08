@@ -1,75 +1,81 @@
+"use client";
 import Link from "next/link";
+import Logo from "./Logo";
 
-export default function Footer({ dict, lang }) {
-  return (
-    <div
-      id="contact"
-      className="relative h-lvh "
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    >
-      <div className="fixed bottom-0 h-lvh w-full">
-        <Content dict={dict} lang={lang} />
-      </div>
-    </div>
-  );
-}
+export default function Footer({ dict, lang = "vi" }) {
+  const navLinks = [
+    { href: `#services`, label: dict?.nav?.services || "Services" },
+    { href: `#projects`, label: dict?.nav?.projects || "Projects" },
+    { href: `#process`, label: dict?.nav?.process || "Process" },
+    { href: `#skills`, label: dict?.nav?.skills || "Skills" },
+    { href: `#about`, label: dict?.nav?.about || "About" },
+    { href: `#contact`, label: dict?.nav?.contact || "Contact" },
+  ];
 
-function Content({ dict, lang }) {
   return (
-    <div className="bg-foreground text-background pt-32 pb-8 px-12 h-full flex flex-col justify-between">
-      <Section1 dict={dict} lang={lang} />
-      <Section2 dict={dict} />
-    </div>
-  );
-}
+    <footer className="border-t border-white/10 bg-[#080c14] pt-16 pb-12 relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Top Call to Action Banner */}
+        <div className="glass-card rounded-3xl p-8 sm:p-12 mb-16 border border-white/10 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="max-w-xl text-center md:text-left">
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-outfit mb-3">
+              {dict?.footer?.ready_cta || "Ready to bring your digital vision to life?"}
+            </h3>
+            <p className="text-slate-300 text-sm sm:text-base">
+              {dict?.footer?.ready_desc || "Available for new freelance contracts and high-impact web development projects."}
+            </p>
+          </div>
 
-function Section1({ dict, lang }) {
-  return (
-    <div>
-      <Nav dict={dict} lang={lang} />
-    </div>
-  );
-}
-
-function Section2({ dict }) {
-  return (
-    <div className="flex justify-between items-end">
-      <h1 className="text-[14vw] leading-[0.8] mt-10 font-bold">{dict?.footer?.thank_you || "Thank You"}</h1>
-      <p className="text-muted/60">{dict?.footer?.copyright || "©Copyright by Sento"}</p>
-    </div>
-  );
-}
-
-function Nav({ dict, lang }) {
-  return (
-    <div className="flex shrink-0 gap-20 text-muted-foreground flex-wrap">
-      <div className="flex flex-col gap-2">
-        <h3 className="mb-2 uppercase text-background font-bold">{dict?.footer?.about || "About"}</h3>
-        <Link href={`/${lang || 'vi'}#introduction`} className="hover:text-background transition-colors">{dict?.footer?.home || "Home"}</Link>
-        <Link href={`/${lang || 'vi'}#project`} className="hover:text-background transition-colors">{dict?.nav?.projects || "Projects"}</Link>
-        <Link href={`/${lang || 'vi'}#about`} className="hover:text-background transition-colors">{dict?.nav?.about || "About me"}</Link>
-        <Link href={`/${lang || 'vi'}#contact`} className="hover:text-background transition-colors">{dict?.footer?.contact || "Contact"}</Link>
-      </div>
-      <div className="flex flex-col gap-2 ">
-        <h3 className="mb-2 uppercase text-background font-bold">{dict?.footer?.contact || "Contact"}</h3>
-        <div className="flex gap-2 flex-col">
-          <Link href="https://github.com/sento800" className="hover:text-background transition-colors">@Github</Link>
-          <Link href="https://www.linkedin.com/in/ph%C3%BA-nguy%E1%BB%85n-%C4%91%C3%ACnh-807749351/" className="hover:text-background transition-colors">
-            @Linkedin
+          <Link
+            href={`/${lang}#contact`}
+            className="px-7 py-3.5 rounded-full text-slate-950 font-bold text-sm sm:text-base bg-gradient-to-r from-sky-400 to-indigo-300 hover:opacity-95 shadow-xl shadow-sky-500/25 transition-all duration-200 shrink-0"
+          >
+            {dict?.footer?.contact_btn || "Get In Touch Today"}
           </Link>
-          <Link href="https://www.facebook.com/" className="hover:text-background transition-colors">@Facebook</Link>
+        </div>
+
+        {/* Main Footer Row */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-white/10">
+          <Logo lang={lang} />
+
+          {/* Quick links */}
+          <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={`/${lang}${link.href}`}
+                className="hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* Local Status */}
+          <div className="flex items-center gap-2 text-xs text-slate-400">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>{dict?.footer?.timezone || "Vietnam Standard Time (GMT+7)"}</span>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>
+            {dict?.footer?.copyright || "© 2026 Nguyen Dinh Phu (Sento). All rights reserved."}
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="https://github.com/sento800" target="_blank" className="hover:text-slate-300 transition">
+              GitHub
+            </Link>
+            <Link href="https://www.linkedin.com/in/ph%C3%BA-nguy%E1%BB%85n-%C4%91%C3%ACnh-807749351/" target="_blank" className="hover:text-slate-300 transition">
+              LinkedIn
+            </Link>
+            <Link href="https://www.facebook.com/phuhhhh5/" target="_blank" className="hover:text-slate-300 transition">
+              Facebook
+            </Link>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
-        <div className="text-xl">
-          <p className="text-background font-bold">{dict?.footer?.email_label || "Email For Work:"}</p>
-          <p>nguyendinhphu800@gmail.com</p>
-        </div>
-        <div className="text-xl">
-          <p className="text-background font-bold">{dict?.footer?.zalo_label || "Zalo Message"}</p>
-          <p>0917897358</p>
-        </div>
-      </div>
-    </div>
+    </footer>
   );
 }

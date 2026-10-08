@@ -1,70 +1,264 @@
 {
   "nav": {
     "about": "Giới thiệu",
-    "skills": "Kỹ năng",
+    "services": "Dịch vụ",
     "projects": "Dự án",
+    "process": "Quy trình",
+    "skills": "Kỹ năng",
+    "why_me": "Lợi thế",
     "contact": "Liên hệ",
-    "download_cv": "Tải CV của tôi"
+    "hire_me": "Thuê tôi",
+    "download_cv": "Tải CV"
   },
   "hero": {
-    "hello": "Xin chào, tôi là",
-    "role": "Lập trình viên Front-end",
-    "based_in": "Làm việc tại",
-    "country": "Việt Nam",
-    "description": "Tôi là Nguyễn Đình Phú, một Lập trình viên Frontend đam mê sáng tạo những trải nghiệm web trực quan và sinh động. Với sự tỉ mỉ và cam kết viết code sạch, tôi chuyên biến những ý tưởng phức tạp thành giao diện người dùng mượt mà. Động lực của tôi là xây dựng các ứng dụng web hiện đại, hiệu suất cao mà người dùng yêu thích.",
-    "phrases": [
-      "Tôi là Nguyễn Đình Phú, Lập trình viên Frontend đam mê",
-      "sáng tạo những trải nghiệm web trực quan và sinh động. Với sự",
-      "tỉ mỉ và cam kết viết code sạch, tôi chuyên biến những",
-      "ý tưởng phức tạp thành giao diện người dùng mượt mà. Tôi khao khát",
-      "xây dựng các ứng dụng web hiện đại, hiệu suất cao mà người dùng yêu thích."
-    ]
+    "status": "Sẵn sàng nhận dự án Freelance",
+    "greeting": "Xin chào, tôi là",
+    "name": "Nguyễn Đình Phú",
+    "title_badge": "Freelance Frontend Developer & UI Specialist",
+    "role": "Lập trình viên Frontend",
+    "tagline": "Biến ý tưởng & bản thiết kế Figma thành các sản phẩm Web tốc độ cao, chuẩn SEO và tối ưu trải nghiệm người dùng.",
+    "sub_desc": "Chuyên xây dựng Landing Page, SaaS Web App và các giao diện web hiện đại với React, Next.js, Tailwind CSS và hiệu ứng mượt mà.",
+    "cta_primary": "Trao đổi dự án",
+    "cta_secondary": "Xem sản phẩm đã làm",
+    "stats": [
+      { "value": "3+", "label": "Năm kinh nghiệm web" },
+      { "value": "100%", "label": "Cam kết đúng tiến độ" },
+      { "value": "< 2h", "label": "Phản hồi nhanh chóng" },
+      { "value": "95+", "label": "Điểm Lighthouse SEO & Speed" }
+    ],
+    "code_snippet": {
+      "filename": "developer.config.ts",
+      "available": "true",
+      "speciality": "Frontend & UI/UX Development",
+      "focus": "Performance, Scalability, Pixel-Perfect",
+      "rate": "Linh hoạt theo dự án / giờ"
+    },
+    "sub_role": "& Chuyên viên UI/UX",
+    "badge_speed_title": "Tốc độ dưới 1s",
+    "badge_speed_desc": "Chuẩn Core Web Vitals",
+    "badge_figma_title": "Chuẩn Pixel-Perfect",
+    "badge_figma_desc": "Chuyển Figma 1:1",
+    "verified_freelancer": "Freelancer uy tín",
+    "request_quote": "Yêu cầu báo giá",
+    "delivery_commitment": "Đúng hạn 100%",
+    "quality_commitment": "Mã nguồn sạch, chuẩn UI/UX",
+    "performance_commitment": "Điểm Lighthouse 95+"
   },
-  "about": {
-    "title_part1": "Về",
-    "title_part2": "Tôi",
-    "p1": "Là một Lập trình viên Frontend có chí tiến thủ và tỉ mỉ, tôi sở hữu nền tảng vững chắc về React.js, tận tâm thiết kế những trải nghiệm web trực quan và hấp dẫn. Niềm đam mê của tôi nằm ở việc tạo ra các thiết kế hoàn hảo (pixel-perfect) và phát triển mã nguồn sạch, hiệu quả, hiệu năng cao giúp tăng cường đáng kể tương tác của người dùng.",
-    "p2": "Gần đây, sau khi hoàn thành khóa đào tạo chuyên sâu về phát triển web, tôi đã nỗ lực tiếp thu kiến thức toàn diện về các công nghệ frontend hiện đại, bao gồm Next.js, TypeScript và Tailwind CSS. Tôi cam kết học hỏi không ngừng, sẵn sàng thích ứng với những thử thách mới và mong muốn đóng góp kỹ năng của mình cho các ứng dụng web sáng tạo, lấy người dùng làm trung tâm.",
-    "p3": "Tôi đang tích cực tìm kiếm cơ hội hợp tác trong các nhóm phát triển năng động và giàu kinh nghiệm, đóng góp vào các dự án có tầm ảnh hưởng và rèn luyện thêm chuyên môn. Mục tiêu của tôi là liên tục cung cấp mã nguồn chất lượng cao, đồng thời tham gia tích cực vào sự phát triển thành công của các sản phẩm kỹ thuật số."
-  },
-  "skills": {
-    "title_part1": "Kỹ năng",
-    "title_part2": "Của Tôi"
-  },
-  "projects": {
-    "title_part1": "Các",
-    "title_part2": "Dự án",
-    "list": [
+  "services": {
+    "badge": "Dịch Vụ Cung Cấp",
+    "title_part1": "Giải Pháp",
+    "title_part2": "Cho Khách Hàng",
+    "description": "Tôi cung cấp các dịch vụ phát triển web toàn diện, giúp doanh nghiệp và cá nhân chuyển hóa ý tưởng thành sản phẩm thực tế với hiệu suất cao nhất.",
+    "deliverables_label": "Hạng mục bàn giao:",
+    "items": [
       {
-        "title": "Trang Web Portfolio Cá Nhân",
-        "description": "Trang web portfolio cá nhân này được phát triển bằng Next.js, React.js và Tailwind CSS. Mục đích cốt lõi của dự án là thể hiện hiệu quả kỹ năng lập trình và các dự án của tôi thông qua giao diện đáp ứng (responsive) và trực quan sinh động.",
-        "src": "portfolio.png",
-        "link": "https://github.com/sento800/sento800.github.io",
-        "color": "#397a4c"
+        "id": "web-app",
+        "icon": "code",
+        "title": "Phát triển Web App & SaaS",
+        "description": "Xây dựng các ứng dụng web phức tạp, bảng điều khiển (Dashboard), SaaS với kiến trúc Next.js / React hiện đại, bảo mật và khả năng mở rộng cao.",
+        "deliverables": ["Next.js App Router & React 19", "Tích hợp RESTful / GraphQL API", "Quản lý State & Authentication", "Tối ưu hóa tốc độ tải trang"]
       },
       {
-        "title": "Papery",
-        "description": "Là Lập trình viên Frontend trong một nhóm ba người, tôi đã phát triển 'Papery', một chatbot chuyên nghiên cứu tài liệu bằng Next.js, React.js và TypeScript. Các đóng góp của tôi bao gồm thiết kế UI/UX, tích hợp API và tối ưu hóa hiệu suất, cung cấp các tính năng như hỗ trợ đa ngôn ngữ và dịch tài liệu chính xác.",
-        "src": "papery.png",
-        "link": "https://github.com/QuanMofii/PAPERY",
-        "color": "#569358"
+        "id": "landing-page",
+        "icon": "layout",
+        "title": "Landing Page Tối Ưu Chuyển Đổi",
+        "description": "Thiết kế và lập trình các trang đích bắt mắt, hiệu ứng micro-animations mượt mà, định hướng chuyển đổi khách hàng tiềm năng tối đa.",
+        "deliverables": ["Thiết kế chuẩn UI/UX hiện đại", "Hiệu ứng cuộn & Micro-interactions", "Tương thích 100% mọi màn hình", "Điểm Core Web Vitals xanh"]
       },
       {
-        "title": "Face-recognition",
-        "description": "Dự án này cung cấp hệ thống nhận diện khuôn mặt theo thời gian thực có khả năng phân biệt và nhận dạng các cá nhân có trong cơ sở dữ liệu xác định trước. Được phát triển bằng Python, giải pháp cung cấp khả năng nhận dạng người một cách mạnh mẽ và hiệu quả.",
-        "src": "face-recognition.png",
-        "link": "https://github.com/sento800/face-recognition",
-        "color": "#77c063"
+        "id": "figma-to-code",
+        "icon": "figma",
+        "title": "Figma to Code (Pixel-Perfect)",
+        "description": "Chuyển giao diện từ Figma, Adobe XD sang mã nguồn HTML/Tailwind/React chuẩn chỉnh từng pixel, có tính tái sử dụng và dễ bảo trì.",
+        "deliverables": ["Chuẩn xác từng khoảng cách & màu sắc", "Chế độ Sáng / Tối (Dark mode)", "Cấu trúc Component khoa học", "Tương thích đa trình duyệt"]
+      },
+      {
+        "id": "performance-seo",
+        "icon": "zap",
+        "title": "Tối Ưu Hiệu Năng & SEO On-Page",
+        "description": "Cải thiện tốc độ tải trang, giảm thiểu bundle size và tối ưu cấu trúc dữ liệu thẻ meta/schema để website đạt thứ hạng cao trên Google.",
+        "deliverables": ["Google Lighthouse 95+ điểm", "Tối ưu hình ảnh & tài nguyên", "Tích hợp thẻ OpenGraph & Schema.org", "Khả năng tiếp cận chuẩn WCAG"]
       }
     ]
   },
+  "process": {
+    "badge": "Quy Trình Làm Việc",
+    "title_part1": "Làm Việc",
+    "title_part2": "Minh Bạch & Hiệu Quả",
+    "description": "Quy trình 4 bước chuẩn chỉ giúp đảm bảo dự án luôn hoàn thành đúng hạn, đúng ngân sách và đạt chất lượng tốt nhất.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Khảo Sát & Lên Kế Hoạch",
+        "description": "Lắng nghe mục tiêu kinh doanh, phân tích yêu cầu kỹ thuật, thống nhất phạm vi công việc (Scope of Work) và mốc bàn giao."
+      },
+      {
+        "step": "02",
+        "title": "Thiết Kế & Thống Nhất UI/UX",
+        "description": "Xác định layout, bảng màu, typography và luồng tương tác của người dùng. Phê duyệt trước khi triển khai code."
+      },
+      {
+        "step": "03",
+        "title": "Lập Trình & Demo Định Kỳ",
+        "description": "Hiện thực hóa dự án với mã nguồn sạch, cập nhật link preview thường xuyên để khách hàng theo dõi tiến độ thực tế."
+      },
+      {
+        "step": "04",
+        "title": "Kiểm Thử, Ra Mắt & Bàn Giao",
+        "description": "Kiểm thử trên nhiều thiết bị và trình duyệt, triển khai lên hosting/Vercel, bàn giao mã nguồn và hướng dẫn sử dụng."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Sản Phẩm Đã Thực Hiện",
+    "title_part1": "Dự Án",
+    "title_part2": "Nổi Bật",
+    "description": "Các dự án thực chiến thể hiện khả năng giải quyết bài toán thực tế, tư duy kiến trúc và kỹ năng giao diện người dùng.",
+    "all": "Tất cả",
+    "web": "Web App",
+    "tools": "Công cụ & AI",
+    "view_live": "Xem trực tiếp",
+    "view_code": "Xem mã nguồn",
+    "key_features": "Điểm nổi bật:",
+    "list": [
+      {
+        "id": "papery",
+        "title": "Papery - Nền Tảng Chatbot Nghiên Cứu Tài Liệu",
+        "category": "web",
+        "description": "Ứng dụng AI thông minh cho phép người dùng tải lên tài liệu học thuật và đặt câu hỏi tương tác. Giao diện tối ưu hóa cho trải nghiệm đọc song ngữ và trích xuất dữ liệu nhanh.",
+        "role": "Frontend Lead & UI/UX Developer",
+        "highlights": ["Tích hợp AI stream chat mượt mà", "Xử lý xem trước tài liệu đa định dạng", "Giao diện đa ngôn ngữ linh hoạt"],
+        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST API"],
+        "src": "papery.png",
+        "link": "https://github.com/QuanMofii/PAPERY",
+        "demo": "https://github.com/QuanMofii/PAPERY",
+        "badge": "AI & Web App"
+      },
+      {
+        "id": "portfolio",
+        "title": "Modern Interactive Portfolio",
+        "category": "web",
+        "description": "Trang web portfolio hiện đại được thiết kế theo phong cách futuristic dark mode, tích hợp đa ngôn ngữ (i18n), hiệu ứng micro-animations mượt mà và tối ưu hóa SEO toàn diện.",
+        "role": "Designer & Full Frontend Developer",
+        "highlights": ["Hỗ trợ đa ngôn ngữ EN / VI", "Lighthouse Score đạt 98+", "Tương tác mượt mà với Framer Motion"],
+        "tech": ["Next.js 15", "React 19", "Tailwind CSS", "Framer Motion", "Lenis Scroll"],
+        "src": "portfolio.png",
+        "link": "https://github.com/sento800/sento800.github.io",
+        "demo": "https://sento800.github.io",
+        "badge": "Portfolio & Branding"
+      },
+      {
+        "id": "face-recognition",
+        "title": "Hệ Thống Nhận Diện Khuôn Mặt Thời Gian Thực",
+        "category": "tools",
+        "description": "Giải pháp thị giác máy tính nhận diện và phân loại khuôn mặt theo thời gian thực từ cơ sở dữ liệu xác định trước với độ trễ thấp và độ chính xác cao.",
+        "role": "Developer & Thuật toán",
+        "highlights": ["Xử lý luồng video thời gian thực", "Độ chính xác nhận diện cao", "Kiến trúc module dễ tích hợp"],
+        "tech": ["Python", "OpenCV", "Computer Vision", "Machine Learning"],
+        "src": "face-recognition.png",
+        "link": "https://github.com/sento800/face-recognition",
+        "demo": "https://github.com/sento800/face-recognition",
+        "badge": "Machine Learning"
+      }
+    ]
+  },
+  "skills": {
+    "badge": "Công Nghệ & Kỹ Năng",
+    "title_part1": "Vũ Khí",
+    "title_part2": "Công Nghệ",
+    "description": "Bộ công cụ hiện đại tôi sử dụng hàng ngày để xây dựng những sản phẩm chất lượng cao, tối ưu và thẩm mỹ.",
+    "badge_footer": "100% Quy chuẩn lập trình quốc tế",
+    "categories": {
+      "frontend": "Frontend Core",
+      "frameworks": "Frameworks & Libraries",
+      "styling": "Styling & Motion",
+      "tools": "Tools & Workflow"
+    }
+  },
+  "why_me": {
+    "badge": "Lợi Thế Hợp Tác",
+    "title_part1": "Vì Sao Khách Hàng",
+    "title_part2": "Tin Tưởng Tôi?",
+    "description": "Là một freelancer, tôi hiểu rằng khách hàng cần nhiều hơn một lập trình viên — họ cần một đối tác có trách nhiệm và thấu hiểu bài toán kinh doanh.",
+    "quality_badge": "✓ Cam kết chất lượng",
+    "cards": [
+      {
+        "title": "Đúng Tiến Độ & Cam Kết",
+        "desc": "Luôn tôn trọng thời gian của khách hàng, bàn giao công việc đúng hoặc trước thời hạn đã cam kết."
+      },
+      {
+        "title": "Giao Tiếp Nhanh & Rõ Ràng",
+        "desc": "Phản hồi trong vòng 2 giờ, chủ động cập nhật tiến độ công việc và giải quyết vấn đề kịp thời."
+      },
+      {
+        "title": "Pixel-Perfect & Thẩm Mỹ",
+        "desc": "Tỉ mỉ đến từng khoảng cách, màu sắc, font chữ và animation để sản phẩm đạt độ hoàn thiện cao nhất."
+      },
+      {
+        "title": "Mã Nguồn Sạch & Dễ Mở Rộng",
+        "desc": "Code tuân thủ quy chuẩn quốc tế, có chú thích rõ ràng, thuận tiện cho việc bảo trì hoặc nâng cấp sau này."
+      }
+    ]
+  },
+  "about": {
+    "badge": "Về Bản Thân",
+    "title_part1": "Hành Trình",
+    "title_part2": "Của Tôi",
+    "p1": "Tôi là Nguyễn Đình Phú, một lập trình viên Frontend đam mê kiến tạo những sản phẩm số không chỉ đẹp về mặt thị giác mà còn mạnh mẽ về hiệu năng và trực quan cho người dùng.",
+    "p2": "Với tinh thần cầu thị và không ngừng cập nhật các công nghệ web mới nhất, tôi luôn đặt trải nghiệm người dùng cuối và giá trị kinh doanh của khách hàng làm trọng tâm cho mỗi dòng code mình viết.",
+    "p3": "Tôi sẵn sàng nhận các dự án freelance từ xa (Remote), hợp tác cùng các Startup, Agency hoặc doanh nghiệp đang cần một lập trình viên Frontend tận tâm và có gu thẩm mỹ cao.",
+    "quick_facts": [
+      { "label": "Vị trí", "val": "Việt Nam (Làm việc Remote toàn cầu)" },
+      { "label": "Chuyên môn", "val": "React.js, Next.js, UI/UX" },
+      { "label": "Ngôn ngữ", "val": "Tiếng Việt, Tiếng Anh" },
+      { "label": "Trạng thái", "val": "Đang nhận dự án mới" }
+    ]
+  },
+  "contact": {
+    "badge": "Bắt Đầu Hợp Tác",
+    "title_part1": "Cùng Biến Ý Tưởng",
+    "title_part2": "Thành Hiện Thực",
+    "description": "Bạn đang có ý tưởng cho một dự án mới hoặc cần nâng cấp website hiện tại? Hãy để lại lời nhắn hoặc liên hệ trực tiếp với tôi qua các kênh bên dưới.",
+    "form_title": "Biểu Mẫu Yêu Cầu Dự Án",
+    "form_name": "Tên hoặc tên công ty",
+    "form_email": "Địa chỉ Email",
+    "form_service": "Dịch vụ bạn đang tìm kiếm",
+    "form_budget": "Mức ngân sách ước tính",
+    "form_message": "Mô tả ngắn gọn về dự án của bạn...",
+    "form_submit": "Gửi yêu cầu dự án",
+    "form_submitting": "Đang chuẩn bị gửi...",
+    "form_success": "Cảm ơn bạn! Email ứng dụng đã được tạo sẵn.",
+    "service_options": [
+      "Xây dựng Web App / SaaS",
+      "Landing Page tối ưu chuyển đổi",
+      "Chuyển Figma sang Code",
+      "Tối ưu tốc độ & SEO",
+      "Tư vấn kỹ thuật khác"
+    ],
+    "budget_options": [
+      "< 5 triệu VNĐ",
+      "5 - 15 triệu VNĐ",
+      "15 - 30 triệu VNĐ",
+      "> 30 triệu VNĐ",
+      "Thương lượng theo dự án"
+    ],
+    "direct_title": "Liên hệ trực tiếp",
+    "email_label": "Email công việc",
+    "zalo_label": "Nhắn tin Zalo",
+    "location_label": "Địa điểm",
+    "location_val": "TP. Hồ Chí Minh, Việt Nam (Remote)",
+    "copy_email": "Sao chép Email",
+    "copied": "Đã sao chép!",
+    "social_label": "Kênh mạng xã hội:",
+    "availability_note": "Sẵn sàng nhận dự án mới",
+    "response_time": "Phản hồi thông thường trong vòng 2 giờ."
+  },
   "footer": {
-    "thank_you": "Cảm Ơn",
-    "copyright": "©Bản quyền thuộc về Sento",
-    "about": "Giới thiệu",
-    "home": "Trang chủ",
-    "contact": "Liên hệ",
-    "email_label": "Email Công Việc:",
-    "zalo_label": "Tin Nhắn Zalo"
+    "ready_cta": "Sẵn sàng đưa sản phẩm của bạn lên tầm cao mới?",
+    "ready_desc": "Sẵn sàng nhận hợp đồng freelance và các dự án phát triển web chất lượng cao.",
+    "contact_btn": "Bắt đầu ngay hôm nay",
+    "timezone": "Giờ Việt Nam (GMT+7)",
+    "copyright": "© 2026 Nguyễn Đình Phú (Sento). Thiết kế & lập trình với đam mê.",
+    "all_rights": "Bảo lưu mọi quyền."
   }
 }

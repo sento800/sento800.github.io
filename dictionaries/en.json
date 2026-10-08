@@ -1,70 +1,264 @@
 {
   "nav": {
-    "about": "About me",
-    "skills": "Skills",
+    "about": "About",
+    "services": "Services",
     "projects": "Projects",
-    "contact": "Contact me",
-    "download_cv": "Download My CV"
+    "process": "Process",
+    "skills": "Skills",
+    "why_me": "Why Me",
+    "contact": "Contact",
+    "hire_me": "Hire Me",
+    "download_cv": "Download CV"
   },
   "hero": {
-    "hello": "Hello I'm",
-    "role": "Front-end Developer",
-    "based_in": "Based In",
-    "country": "Viet Nam",
-    "description": "I'm Nguyễn Đình Phú, a passionate Frontend Developer dedicated to crafting intuitive and visually engaging web experiences. With a keen eye for detail and a commitment to clean code, I specialize in transforming complex ideas into seamless user interfaces. I'm driven to build modern, high-performance web applications that users love.",
-    "phrases": [
-      "I'm Nguyen Đinh Phu, a passionate Frontend Developer dedicated to",
-      "crafting intuitive and visually engaging web experiences. With a",
-      "keen eye for detail and a commitment to clean code, I specialize in",
-      "transforming complex ideas into seamless user interfaces. I'm driven ",
-      "to build modern, high-performance web applications that users love."
-    ]
+    "status": "Available for Freelance Projects",
+    "greeting": "Hello, I am",
+    "name": "Nguyen Dinh Phu",
+    "title_badge": "Freelance Frontend Developer & UI Specialist",
+    "role": "Frontend Developer",
+    "tagline": "Turning ideas & Figma designs into high-performance, SEO-optimized, and conversion-focused web experiences.",
+    "sub_desc": "Specializing in High-converting Landing Pages, SaaS Web Apps, and modern web interfaces using React, Next.js, Tailwind CSS, and fluid animations.",
+    "cta_primary": "Discuss a Project",
+    "cta_secondary": "Explore Projects",
+    "stats": [
+      { "value": "3+", "label": "Years Web Experience" },
+      { "value": "100%", "label": "On-Time Delivery" },
+      { "value": "< 2h", "label": "Fast Response Time" },
+      { "value": "95+", "label": "Lighthouse SEO & Speed Score" }
+    ],
+    "code_snippet": {
+      "filename": "developer.config.ts",
+      "available": "true",
+      "speciality": "Frontend & UI/UX Development",
+      "focus": "Performance, Scalability, Pixel-Perfect",
+      "rate": "Flexible by project / hourly"
+    },
+    "sub_role": "& UI/UX Specialist",
+    "badge_speed_title": "Sub-second Speed",
+    "badge_speed_desc": "Core Web Vitals Optimized",
+    "badge_figma_title": "Pixel-Perfect UI",
+    "badge_figma_desc": "1:1 Figma Translation",
+    "verified_freelancer": "Verified Freelancer",
+    "request_quote": "Request Quotation",
+    "delivery_commitment": "Strictly on schedule",
+    "quality_commitment": "Pixel-perfect & clean code",
+    "performance_commitment": "95+ Lighthouse Score"
   },
-  "about": {
-    "title_part1": "About",
-    "title_part2": "Me",
-    "p1": "As a highly motivated and detail-oriented Frontend Developer, I possess a strong foundation in React.js, dedicated to crafting intuitive and visually compelling web experiences. My passion lies in delivering pixel-perfect designs and developing clean, efficient, and highly performant code that significantly enhances user interaction.",
-    "p2": "Having recently completed my intensive web development training, I have diligently acquired a comprehensive understanding of modern frontend technologies, including Next.js, TypeScript, and Tailwind CSS. I am committed to continuous learning, readily adapting to new challenges, and eager to contribute my skills to innovative and user-centric web applications.",
-    "p3": "I am actively seeking opportunities to collaborate within dynamic and experienced development teams, contribute to impactful projects, and further refine my expertise. My objective is to consistently deliver high-quality code while actively participating in the successful evolution of digital products."
-  },
-  "skills": {
-    "title_part1": "My",
-    "title_part2": "Skills"
-  },
-  "projects": {
-    "title_part1": "My",
-    "title_part2": "Projects",
-    "list": [
+  "services": {
+    "badge": "Services Offered",
+    "title_part1": "High-Impact",
+    "title_part2": "Client Solutions",
+    "description": "Comprehensive web development services designed to help founders, agencies, and businesses launch fast, reliable, and visually stunning products.",
+    "deliverables_label": "Key Deliverables:",
+    "items": [
       {
-        "title": "Personal Portfolio Website",
-        "description": "This personal portfolio website was developed using Next.js, React.js, and Tailwind CSS. Its core purpose is to effectively showcase my development skills and projects through a responsive and visually appealing interface.",
-        "src": "portfolio.png",
-        "link": "https://github.com/sento800/sento800.github.io",
-        "color": "#397a4c"
+        "id": "web-app",
+        "icon": "code",
+        "title": "Web Apps & SaaS Development",
+        "description": "Building full-featured web applications, client portals, and SaaS dashboards with Next.js & React, architected for scalability and security.",
+        "deliverables": ["Next.js App Router & React 19", "RESTful / GraphQL API Integration", "Robust State & Authentication", "Ultra-fast Page Speeds"]
       },
       {
-        "title": "Papery",
-        "description": "As a Frontend Developer in a three-person team, I developed 'Papery,' a specialized chatbot for document research using Next.js, React.js, and TypeScript. My contributions included UI/UX design, API integration, and performance optimization, delivering features like multi-language support and accurate document translation.",
-        "src": "papery.png",
-        "link": "https://github.com/QuanMofii/PAPERY",
-        "color": "#569358"
+        "id": "landing-page",
+        "icon": "layout",
+        "title": "Conversion Landing Pages",
+        "description": "Designing and engineering marketing websites that captivate visitors, featuring 60fps micro-animations and targeted user flows.",
+        "deliverables": ["Modern & Clean UI/UX", "Smooth Scroll & Interactions", "100% Mobile & Tablet Responsive", "Green Core Web Vitals"]
       },
       {
-        "title": "Face-recognition",
-        "description": "This project delivers a real-time facial recognition system capable of distinguishing and identifying individuals present in a predefined database. Developed with Python, the solution provides robust and efficient person recognition capabilities.",
-        "src": "face-recognition.png",
-        "link": "https://github.com/sento800/face-recognition",
-        "color": "#77c063"
+        "id": "figma-to-code",
+        "icon": "figma",
+        "title": "Figma to Pixel-Perfect Code",
+        "description": "Translating Figma or Sketch design files into clean, maintainable, and modular HTML/Tailwind/React code with zero visual compromises.",
+        "deliverables": ["Exact spacing, colors & typography", "Light & Dark Mode support", "Reusable component hierarchy", "Cross-browser compatibility"]
+      },
+      {
+        "id": "performance-seo",
+        "icon": "zap",
+        "title": "Speed & SEO Optimization",
+        "description": "Auditing and supercharging your website's load times, minimizing JavaScript bundle size, and ensuring top-rank search engine visibility.",
+        "deliverables": ["95+ Google Lighthouse Scores", "Asset & Image Optimization", "OpenGraph & Schema.org markup", "WCAG Accessibility Compliant"]
       }
     ]
   },
+  "process": {
+    "badge": "How I Work",
+    "title_part1": "Transparent",
+    "title_part2": "& Agile Workflow",
+    "description": "A structured 4-step process that guarantees clarity, on-time milestones, and stress-free collaboration from start to finish.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Discovery & Scope",
+        "description": "Understanding your business goals, target audience, technical requirements, and defining a clear scope with fixed milestones."
+      },
+      {
+        "step": "02",
+        "title": "Architecture & UI Review",
+        "description": "Reviewing design assets, user flow, component hierarchies, and finalizing wireframes before writing a single line of code."
+      },
+      {
+        "step": "03",
+        "title": "Development & Demos",
+        "description": "Writing clean, tested code with regular live preview links so you can track progress and give iterative feedback."
+      },
+      {
+        "step": "04",
+        "title": "Testing, Launch & Handover",
+        "description": "Rigorous cross-device testing, SEO checks, cloud deployment, complete source handover, and 30-day post-launch support."
+      }
+    ]
+  },
+  "projects": {
+    "badge": "Selected Works",
+    "title_part1": "Featured",
+    "title_part2": "Projects",
+    "description": "Real-world projects showcasing problem solving, modern architectural patterns, and attention to visual detail.",
+    "all": "All",
+    "web": "Web Apps",
+    "tools": "Tools & AI",
+    "view_live": "Live Preview",
+    "view_code": "Source Code",
+    "key_features": "Key Highlights:",
+    "list": [
+      {
+        "id": "papery",
+        "title": "Papery - AI Document Research Platform",
+        "category": "web",
+        "description": "An intelligent AI document chatbot platform enabling users to upload academic files and extract contextual insights with real-time streaming answers.",
+        "role": "Frontend Lead & UI/UX Developer",
+        "highlights": ["Smooth AI stream chat interface", "Multi-format document previewing", "Bilingual localized UX"],
+        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST API"],
+        "src": "papery.png",
+        "link": "https://github.com/QuanMofii/PAPERY",
+        "demo": "https://github.com/QuanMofii/PAPERY",
+        "badge": "AI & Web App"
+      },
+      {
+        "id": "portfolio",
+        "title": "Modern Interactive Portfolio",
+        "category": "web",
+        "description": "A high-performance personal portfolio engineered with a futuristic dark mode aesthetic, full internationalization (i18n), and fluid micro-animations.",
+        "role": "Designer & Full Frontend Developer",
+        "highlights": ["Bilingual support (EN / VI)", "98+ Lighthouse Performance Score", "Fluid Framer Motion micro-interactions"],
+        "tech": ["Next.js 15", "React 19", "Tailwind CSS", "Framer Motion", "Lenis Scroll"],
+        "src": "portfolio.png",
+        "link": "https://github.com/sento800/sento800.github.io",
+        "demo": "https://sento800.github.io",
+        "badge": "Portfolio & Branding"
+      },
+      {
+        "id": "face-recognition",
+        "title": "Real-time Facial Recognition System",
+        "category": "tools",
+        "description": "A computer vision solution capable of detecting and verifying individuals in real-time video streams against a database with low latency.",
+        "role": "Developer & Algorithm Implementation",
+        "highlights": ["Real-time video stream ingestion", "High matching accuracy", "Modular integration architecture"],
+        "tech": ["Python", "OpenCV", "Computer Vision", "Machine Learning"],
+        "src": "face-recognition.png",
+        "link": "https://github.com/sento800/face-recognition",
+        "demo": "https://github.com/sento800/face-recognition",
+        "badge": "Machine Learning"
+      }
+    ]
+  },
+  "skills": {
+    "badge": "Technical Arsenal",
+    "title_part1": "Modern",
+    "title_part2": "Tech Stack",
+    "description": "A proven suite of tools and libraries I leverage daily to engineer fast, resilient, and engaging web products.",
+    "badge_footer": "100% Industry Standard Practices",
+    "categories": {
+      "frontend": "Frontend Core",
+      "frameworks": "Frameworks & Libraries",
+      "styling": "Styling & Motion",
+      "tools": "Tools & Workflow"
+    }
+  },
+  "why_me": {
+    "badge": "Why Collaborate With Me",
+    "title_part1": "Why Clients",
+    "title_part2": "Choose Me?",
+    "description": "As a dedicated freelancer, I treat every project as a strategic partnership with your business goals at the center.",
+    "quality_badge": "✓ Quality Assured",
+    "cards": [
+      {
+        "title": "Guaranteed Deadlines",
+        "desc": "I deeply respect your timetable. Projects are delivered strictly on or ahead of agreed schedule."
+      },
+      {
+        "title": "Rapid & Transparent Communication",
+        "desc": "Prompt responses within 2 hours, continuous progress visibility, and proactive problem solving."
+      },
+      {
+        "title": "Pixel-Perfect Craftsmanship",
+        "desc": "Meticulous focus on micro-interactions, responsive fluidity, font hierarchy, and polish."
+      },
+      {
+        "title": "Clean, Extensible Codebase",
+        "desc": "Well-structured, documented code following industry best practices for smooth handoff and scaling."
+      }
+    ]
+  },
+  "about": {
+    "badge": "About Me",
+    "title_part1": "My",
+    "title_part2": "Background",
+    "p1": "I'm Nguyen Dinh Phu, a Frontend Developer dedicated to engineering web experiences that marry visual elegance with blazingly fast technical performance.",
+    "p2": "I continuously integrate the latest modern web standards, keeping user satisfaction and business conversion at the heart of every project I touch.",
+    "p3": "I am currently accepting remote freelance contracts, collaborating with forward-thinking startups, agencies, and businesses looking for top-tier frontend execution.",
+    "quick_facts": [
+      { "label": "Location", "val": "Vietnam (Available for Global Remote)" },
+      { "label": "Specialization", "val": "React.js, Next.js, UI/UX Engineering" },
+      { "label": "Languages", "val": "English, Vietnamese" },
+      { "label": "Status", "val": "Open for New Projects" }
+    ]
+  },
+  "contact": {
+    "badge": "Let's Collaborate",
+    "title_part1": "Have a Project",
+    "title_part2": "In Mind?",
+    "description": "Whether you are looking to launch an MVP, build a custom web app, or revamp an existing website, I'd love to hear from you.",
+    "form_title": "Project Inquiry Form",
+    "form_name": "Your Name / Company",
+    "form_email": "Your Email Address",
+    "form_service": "Service You Need",
+    "form_budget": "Estimated Budget",
+    "form_message": "Tell me a little about your project...",
+    "form_submit": "Send Project Inquiry",
+    "form_submitting": "Preparing...",
+    "form_success": "Thank you! Your email client has been prepared.",
+    "service_options": [
+      "Custom Web App / SaaS",
+      "High-Converting Landing Page",
+      "Figma to Pixel-Perfect Code",
+      "Performance & SEO Boost",
+      "Technical Consultation"
+    ],
+    "budget_options": [
+      "< $200",
+      "$200 - $600",
+      "$600 - $1,500",
+      "> $1,500",
+      "Flexible / To be discussed"
+    ],
+    "direct_title": "Direct Contact",
+    "email_label": "Direct Email",
+    "zalo_label": "Zalo / Chat",
+    "location_label": "Location",
+    "location_val": "Ho Chi Minh City, Vietnam (Remote)",
+    "copy_email": "Copy Email",
+    "copied": "Copied!",
+    "social_label": "Social Profiles:",
+    "availability_note": "Ready for Q2/Q3 2026",
+    "response_time": "Typically responds within 2 hours."
+  },
   "footer": {
-    "thank_you": "Thank You",
-    "copyright": "©Copyright by Sento",
-    "about": "About",
-    "home": "Home",
-    "contact": "Contact",
-    "email_label": "Email For Work:",
-    "zalo_label": "Zalo Message"
+    "ready_cta": "Ready to bring your digital vision to life?",
+    "ready_desc": "Available for new freelance contracts and high-impact web development projects.",
+    "contact_btn": "Get In Touch Today",
+    "timezone": "Vietnam Standard Time (GMT+7)",
+    "copyright": "© 2026 Nguyen Dinh Phu (Sento). Crafted with passion & precision.",
+    "all_rights": "All rights reserved."
   }
 }

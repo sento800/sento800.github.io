@@ -1,84 +1,100 @@
-import { Inter, Outfit } from "next/font/google";
-import { Geist_Mono } from "next/font/google";
-import "../globals.css";
+export async function generateMetadata({ params }) {
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || 'vi';
+  const isEn = lang === 'en';
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+  const title = isEn
+    ? "Nguyen Dinh Phu (Sento) | Freelance Frontend Developer & UI Specialist"
+    : "Nguyễn Đình Phú (Sento) | Freelance Frontend Developer & UI Specialist";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  const description = isEn
+    ? "Portfolio of Nguyen Dinh Phu (Sento) - Freelance Frontend Developer specializing in high-performance web applications, Landing Pages, and SaaS with React, Next.js, and Tailwind CSS."
+    : "Portfolio của Nguyễn Đình Phú (Sento) - Lập trình viên Frontend Freelance chuyên xây dựng Landing Page, SaaS Web App và giao diện người dùng tốc độ cao với React, Next.js, Tailwind CSS.";
 
-export const metadata = {
-  title: {
-    default: "Nguyễn Đình Phú | Chuyên gia Lập trình Frontend",
-    template: "%s | Nguyễn Đình Phú (Sento)",
-  },
-  description: "Khám phá Portfolio của Nguyễn Đình Phú (Sento) - Lập trình viên Frontend với đam mê kiến tạo trải nghiệm người dùng đột phá. Chuyên sâu React.js, Next.js, và UI/UX Design.",
-  keywords: [
-    "Nguyễn Đình Phú", 
-    "Nguyen Dinh Phu", 
-    "Sento",
-    "Frontend Developer", 
-    "React.js Developer Việt Nam", 
-    "Chuyên gia Next.js", 
-    "Web Developer Sài Gòn", 
-    "Lập trình viên Frontend",
-    "Thiết kế UI/UX",
-    "Portfolio Lập trình viên"
-  ],
-  authors: [{ name: "Nguyễn Đình Phú", url: "https://sento800.github.io" }],
-  creator: "Nguyễn Đình Phú",
-  publisher: "Nguyễn Đình Phú",
-  alternates: {
-    canonical: "https://sento800.github.io",
-  },
-  metadataBase: new URL('https://sento800.github.io'),
-  openGraph: {
-    type: "profile",
-    firstName: "Phú",
-    lastName: "Nguyễn Đình",
-    username: "sento800",
-    gender: "male",
-    locale: "vi_VN",
-    url: "https://sento800.github.io",
-    title: "Nguyễn Đình Phú | Chuyên gia Lập trình Frontend",
-    description: "Khám phá Portfolio của Nguyễn Đình Phú (Sento). Cùng tôi kiến tạo những trải nghiệm người dùng đột phá với React.js và Next.js.",
-    siteName: "Nguyễn Đình Phú Portfolio",
-    images: [
-      {
-        url: "/img/about.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Nguyễn Đình Phú - Frontend Developer",
+  const keywords = isEn
+    ? [
+        "Nguyen Dinh Phu",
+        "Sento",
+        "Freelance Frontend Developer",
+        "React.js Developer",
+        "Next.js Developer Freelance",
+        "Hire Frontend Developer",
+        "Figma to Code React",
+        "Conversion Landing Page Developer",
+        "UI UX Specialist"
+      ]
+    : [
+        "Nguyễn Đình Phú", 
+        "Nguyen Dinh Phu", 
+        "Sento",
+        "Freelance Frontend Developer", 
+        "React.js Developer Việt Nam", 
+        "Next.js Developer Freelance", 
+        "Thuê lập trình viên Frontend",
+        "Figma to Code React",
+        "Thiết kế Landing Page chuẩn SEO",
+        "Web Developer Sài Gòn"
+      ];
+
+  return {
+    title: {
+      default: title,
+      template: `%s | ${isEn ? "Nguyen Dinh Phu" : "Nguyễn Đình Phú"}`,
+    },
+    description,
+    keywords,
+    authors: [{ name: "Nguyễn Đình Phú", url: "https://sento800.github.io" }],
+    creator: "Nguyễn Đình Phú",
+    publisher: "Nguyễn Đình Phú",
+    alternates: {
+      canonical: `https://sento800.github.io/${lang}`,
+      languages: {
+        'vi-VN': 'https://sento800.github.io/vi',
+        'en-US': 'https://sento800.github.io/en',
       },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Nguyễn Đình Phú | Chuyên gia Lập trình Frontend",
-    description: "Khám phá Portfolio của Nguyễn Đình Phú (Sento). Cùng tôi kiến tạo những trải nghiệm người dùng đột phá với React.js và Next.js.",
-    images: ["/img/about.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    },
+    metadataBase: new URL('https://sento800.github.io'),
+    openGraph: {
+      type: "profile",
+      firstName: isEn ? "Phu" : "Phú",
+      lastName: isEn ? "Nguyen" : "Nguyễn Đình",
+      username: "sento800",
+      gender: "male",
+      locale: isEn ? "en_US" : "vi_VN",
+      url: `https://sento800.github.io/${lang}`,
+      title,
+      description,
+      siteName: isEn ? "Nguyen Dinh Phu Portfolio" : "Nguyễn Đình Phú Portfolio",
+      images: [
+        {
+          url: "/img/about.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Nguyễn Đình Phú - Frontend Developer",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/img/about.jpg"],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
     },
-  },
-};
+  };
+}
 
 export function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'vi' }];
 }
 
-export default function RootLayout({ children, params }) {
+export default async function LangLayout({ children, params }) {
+  const resolvedParams = await params;
+  const lang = resolvedParams?.lang || 'vi';
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -86,7 +102,8 @@ export default function RootLayout({ children, params }) {
     alternateName: "Sento",
     url: "https://sento800.github.io",
     image: "https://sento800.github.io/img/about.jpg",
-    jobTitle: "Frontend Developer",
+    jobTitle: "Freelance Frontend Developer",
+    knowsAbout: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "UI/UX", "SEO Optimization"],
     sameAs: [
       "https://github.com/sento800",
       "https://www.linkedin.com/in/ph%C3%BA-nguy%E1%BB%85n-%C4%91%C3%ACnh-807749351/",
@@ -95,22 +112,12 @@ export default function RootLayout({ children, params }) {
   };
 
   return (
-    <html lang={params.lang} className="mdl-js">
-      <body
-        className={`${inter.variable} ${outfit.variable} font-sans antialiased bg-background text-foreground relative`}
-      >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        {/* Animated Mesh Background Orbs */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
-          <div className="mesh-orb bg-blue-300 w-96 h-96 top-0 -left-10 mix-blend-multiply"></div>
-          <div className="mesh-orb bg-purple-300 w-96 h-96 top-40 right-10 mix-blend-multiply animation-delay-2000"></div>
-          <div className="mesh-orb bg-pink-300 w-96 h-96 -bottom-20 left-40 mix-blend-multiply animation-delay-4000"></div>
-        </div>
-        {children}
-      </body>
-    </html>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {children}
+    </>
   );
 }

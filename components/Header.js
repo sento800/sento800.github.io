@@ -1,74 +1,176 @@
 "use client";
 import Link from "next/link";
-import Button from "./Button";
 import Logo from "./Logo";
-import NavBar from "./NavBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Header({ dict, lang }) {
-  const [openNavMobile, setOpenNavMobile] = useState(false);
-  function handleClick() {
-    setOpenNavMobile((open) => !open);
-  }
+export default function Header({ dict, lang = "vi" }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: `#services`, label: dict?.nav?.services || "Services" },
+    { href: `#projects`, label: dict?.nav?.projects || "Projects" },
+    { href: `#process`, label: dict?.nav?.process || "Process" },
+    { href: `#skills`, label: dict?.nav?.skills || "Skills" },
+    { href: `#about`, label: dict?.nav?.about || "About" },
+    { href: `#contact`, label: dict?.nav?.contact || "Contact" },
+  ];
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-16 lg:h-20 flex items-center justify-between">
-        <Logo />
-        <NavBar open={openNavMobile} dict={dict} lang={lang} />
-        <div className="flex items-center gap-4">
-          <div className="flex gap-2 text-sm font-medium">
-            <Link href="/en" className={`hover:text-primary transition-colors ${lang === 'en' ? 'text-primary' : 'text-muted-foreground'}`}>EN</Link>
-            <span className="text-muted-foreground">|</span>
-            <Link href="/vi" className={`hover:text-primary transition-colors ${lang === 'vi' ? 'text-primary' : 'text-muted-foreground'}`}>VI</Link>
-          </div>
-          <Link href={`/${lang}`} className="hidden lg:block">
-            <Button style="primary" magnetic={true}>
-              {dict?.nav?.download_cv || "Download My CV"}
-              <span className="ml-2 inline-block">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M16.5 11.5V12.5C16.5 13.9001 16.5 14.6002 16.2275 15.135C15.9878 15.6054 15.6054 15.9878 15.135 16.2275C14.6002 16.5 13.9001 16.5 12.5 16.5H5.5C4.09987 16.5 3.3998 16.5 2.86502 16.2275C2.39462 15.9878 2.01217 15.6054 1.77248 15.135C1.5 14.6002 1.5 13.9001 1.5 12.5V11.5M13.1667 7.33333L9 11.5M9 11.5L4.83333 7.33333M9 11.5V1.5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-            </Button>
-          </Link>
-          <button 
-            className="lg:hidden p-2 text-foreground"
-            onClick={handleClick}
-            aria-label="Toggle menu"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#080c14]/85 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl shadow-black/50"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl flex items-center justify-between">
+        {/* Logo */}
+        <Logo lang={lang} />
+
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-1 bg-slate-900/60 border border-white/10 px-4 py-1.5 rounded-full backdrop-blur-md shadow-inner">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={`/${lang}${link.href}`}
+              className="text-sm font-medium text-slate-300 hover:text-white px-3.5 py-1.5 rounded-full hover:bg-white/10 transition-all duration-200"
             >
-              {openNavMobile ? (
-                <path d="M18 6 6 18M6 6l12 12" />
-              ) : (
-                <path d="M3 12h18M3 6h18M3 18h18" />
-              )}
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right Actions: Availability Badge, Lang Toggle & CTA */}
+        <div className="hidden sm:flex items-center gap-3">
+          {/* Availability Pill */}
+          <div className="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-medium text-emerald-400">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>{dict?.hero?.status || "Available for Freelance"}</span>
+          </div>
+
+          {/* Lang Switcher */}
+          <div className="flex items-center bg-slate-900/80 border border-white/10 p-1 rounded-full text-xs font-semibold">
+            <Link
+              href="/en"
+              className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
+                lang === "en"
+                  ? "bg-sky-500 text-slate-950 shadow-md font-bold"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              EN
+            </Link>
+            <Link
+              href="/vi"
+              className={`px-2.5 py-1 rounded-full transition-all duration-200 ${
+                lang === "vi"
+                  ? "bg-sky-500 text-slate-950 shadow-md font-bold"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              VI
+            </Link>
+          </div>
+
+          {/* Primary CTA */}
+          <Link
+            href={`/${lang}#contact`}
+            className="group relative inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-slate-950 bg-gradient-to-r from-sky-400 to-indigo-400 hover:from-sky-300 hover:to-indigo-300 shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 hover:-translate-y-0.5 transition-all duration-200"
+          >
+            <span>{dict?.nav?.hire_me || "Hire Me"}</span>
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
+          </Link>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <div className="flex items-center gap-2 lg:hidden">
+          {/* Lang Switcher Mobile */}
+          <div className="flex items-center bg-slate-900/80 border border-white/10 p-0.5 rounded-full text-xs font-semibold mr-1">
+            <Link
+              href="/en"
+              className={`px-2 py-1 rounded-full ${
+                lang === "en" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400"
+              }`}
+            >
+              EN
+            </Link>
+            <Link
+              href="/vi"
+              className={`px-2 py-1 rounded-full ${
+                lang === "vi" ? "bg-sky-500 text-slate-950 font-bold" : "text-slate-400"
+              }`}
+            >
+              VI
+            </Link>
+          </div>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-2.5 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:text-white hover:bg-slate-800 transition"
+            aria-label="Toggle Navigation Menu"
+          >
+            {isOpen ? (
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+              </svg>
+            )}
           </button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      {isOpen && (
+        <div className="lg:hidden mt-3 px-4 pb-6 pt-2 bg-[#080c14]/95 border-b border-white/10 backdrop-blur-2xl">
+          <div className="flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={`/${lang}${link.href}`}
+                onClick={() => setIsOpen(false)}
+                className="px-4 py-3 rounded-xl text-slate-200 hover:bg-white/5 hover:text-sky-400 font-medium transition"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="pt-2 border-t border-white/10 flex flex-col gap-3">
+              <div className="flex items-center gap-2 px-4 py-2 text-xs font-medium text-emerald-400">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>{dict?.hero?.status || "Available for Freelance Projects"}</span>
+              </div>
+              <Link
+                href={`/${lang}#contact`}
+                onClick={() => setIsOpen(false)}
+                className="w-full text-center py-3 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-sky-400 to-indigo-400 shadow-lg shadow-sky-500/20"
+              >
+                {dict?.nav?.hire_me || "Hire Me"}
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
-
-export default Header;
