@@ -94,43 +94,14 @@ export default function Hero({ dict, lang = "vi" }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="lg:col-span-5 relative py-6 px-3 sm:px-4"
+          className="lg:col-span-5 relative"
         >
           {/* Glowing aura background */}
           <div className="absolute -inset-2 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl blur-2xl opacity-20 -z-10" />
 
-          {/* Floating Pill Badges - Symmetrical Diagonal (Top-Right & Bottom-Left) */}
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-5 -right-3 sm:-right-4 bg-slate-900/95 border border-indigo-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
-          >
-            <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold shrink-0">
-              🎨
-            </div>
-            <div className="whitespace-nowrap">
-              <div className="text-xs font-bold text-white">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
-              <div className="text-[10px] text-slate-400">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute -bottom-5 -left-3 sm:-left-4 bg-slate-900/95 border border-sky-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
-          >
-            <div className="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold shrink-0">
-              ⚡
-            </div>
-            <div className="whitespace-nowrap">
-              <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
-              <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
-            </div>
-          </motion.div>
-
           {/* Code IDE Card */}
           <div className="glass-card rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden">
-            {/* Window header: macOS controls and status on left, file tab on center, right clear */}
+            {/* Window header */}
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs">
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-1.5">
@@ -150,6 +121,21 @@ export default function Hero({ dict, lang = "vi" }) {
                 <span>developer.config.ts</span>
               </div>
             </div>
+
+            {/* Top Badge: Inside card, below top horizontal divider line on the right */}
+            <motion.div
+              animate={{ y: [0, -4, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute top-20 right-4 sm:right-6 bg-slate-900/90 border border-indigo-500/30 px-3.5 py-2 rounded-xl shadow-lg flex items-center gap-2.5 backdrop-blur-md z-10"
+            >
+              <div className="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0">
+                🎨
+              </div>
+              <div className="whitespace-nowrap">
+                <div className="text-xs font-bold text-white">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
+                <div className="text-[10px] text-slate-400">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
+              </div>
+            </motion.div>
 
             {/* Code lines */}
             <div className="font-mono text-xs sm:text-sm leading-relaxed space-y-2 text-slate-300">
@@ -202,9 +188,25 @@ export default function Hero({ dict, lang = "vi" }) {
               <p>&#125;;</p>
             </div>
 
-            {/* Quick action bar inside card: shifted to right so bottom-left badge does not overlap */}
-            <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-end gap-3 text-xs">
-              <div className="flex items-center gap-3">
+            {/* Quick action bar: After bottom horizontal divider line */}
+            <div className="mt-5 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+              {/* Bottom Badge: Inside card, below horizontal divider line on the left */}
+              <motion.div
+                animate={{ y: [0, 4, 0] }}
+                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                className="bg-slate-900/90 border border-sky-500/30 px-3.5 py-2 rounded-xl shadow-md flex items-center gap-2.5 backdrop-blur-md w-fit"
+              >
+                <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0">
+                  ⚡
+                </div>
+                <div className="whitespace-nowrap">
+                  <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
+                  <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
+                </div>
+              </motion.div>
+
+              {/* Action links on the right */}
+              <div className="flex items-center gap-3 self-end sm:self-auto">
                 <span className="text-slate-400 flex items-center gap-1.5">
                   <span className="text-emerald-400 font-bold">✓</span> {dict?.hero?.verified_freelancer || "Verified Freelancer"}
                 </span>
