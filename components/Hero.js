@@ -10,14 +10,11 @@ export default function Hero({ dict, lang = "vi" }) {
   const [auditing, setAuditing] = useState(false);
   const [interactiveToggle, setInteractiveToggle] = useState(true);
   const [interactiveFidelity, setInteractiveFidelity] = useState(98);
-  const [mousePos, setMousePos] = useState({ x: 200, y: 150 });
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    e.currentTarget.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
   };
 
   const copyConfigSnippet = () => {
@@ -148,7 +145,7 @@ export default function Hero({ dict, lang = "vi" }) {
             <div
               className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100 hover:opacity-100"
               style={{
-                background: `radial-gradient(450px circle at ${mousePos.x}px ${mousePos.y}px, rgba(56, 189, 248, 0.08), transparent 45%)`,
+                background: "radial-gradient(450px circle at var(--mouse-x, 200px) var(--mouse-y, 150px), rgba(56, 189, 248, 0.08), transparent 45%)",
               }}
             />
 

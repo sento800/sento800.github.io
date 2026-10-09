@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, use } from "react";
 import { useParams } from "next/navigation";
-import Lenis from "lenis";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -30,31 +29,6 @@ export default function Page({ params }) {
   
   if (!lang) lang = "vi";
   const dict = getDictionary(lang);
-
-  useEffect(() => {
-    let lenis;
-    try {
-      lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-      });
-
-      let animationFrameId;
-      function raf(time) {
-        lenis?.raf(time);
-        animationFrameId = requestAnimationFrame(raf);
-      }
-      animationFrameId = requestAnimationFrame(raf);
-
-      return () => {
-        if (animationFrameId) cancelAnimationFrame(animationFrameId);
-        lenis?.destroy();
-      };
-    } catch (err) {
-      console.warn("Smooth scroll initialization skipped:", err);
-    }
-  }, []);
 
   useEffect(() => {
     if (typeof document !== "undefined" && lang) {

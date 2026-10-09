@@ -141,7 +141,7 @@
         "description": "A high-performance personal portfolio engineered with a futuristic dark mode aesthetic, full internationalization (i18n), and fluid micro-animations.",
         "role": "Designer & Full Frontend Developer",
         "highlights": ["Bilingual support (EN / VI)", "98+ Lighthouse Performance Score", "Fluid Framer Motion micro-interactions"],
-        "tech": ["Next.js 15", "React 19", "Tailwind CSS", "Framer Motion", "Lenis Scroll"],
+        "tech": ["Next.js 15", "React 19", "Tailwind CSS", "Framer Motion", "Smooth Motion"],
         "src": "portfolio.png",
         "link": "https://github.com/sento800/sento800.github.io",
         "demo": "https://sento800.github.io",

@@ -24,10 +24,10 @@ export default function Process({ dict }) {
         {steps.map((item, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
             className="group glass-card rounded-2xl p-6 sm:p-7 border border-white/10 hover:border-sky-500/40 hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300 relative flex flex-col justify-between"
           >
             <div>

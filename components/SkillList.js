@@ -52,10 +52,10 @@ export default function SkillList({ dict }) {
         {skillCategories.map((group, gIdx) => (
           <motion.div
             key={gIdx}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: gIdx * 0.1 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.4, delay: gIdx * 0.08, ease: "easeOut" }}
             className="glass-card rounded-2xl p-6 sm:p-7 border border-white/10 flex flex-col justify-between hover:border-white/20 transition-all duration-300"
           >
             <div>

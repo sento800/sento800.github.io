@@ -40,11 +40,11 @@
   }
 
   * {
-    scroll-behavior: smooth;
     box-sizing: border-box;
   }
 
   html {
+    scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
     color-scheme: dark;
   }
@@ -79,6 +79,8 @@
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .glass-pill {
@@ -123,6 +125,10 @@
     filter: blur(60px);
     pointer-events: none;
     z-index: -1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+    contain: strict;
   }
 
   .ambient-glow-2 {
@@ -133,6 +139,10 @@
     filter: blur(60px);
     pointer-events: none;
     z-index: -1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+    contain: strict;
   }
 
   .ambient-glow-3 {
@@ -143,6 +153,10 @@
     filter: blur(60px);
     pointer-events: none;
     z-index: -1;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    will-change: transform;
+    contain: strict;
   }
 }
 

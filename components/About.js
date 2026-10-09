@@ -18,8 +18,8 @@ export default function About({ dict, lang = "vi" }) {
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
           className="lg:col-span-5 relative flex justify-center"
         >
           <div className="relative w-full max-w-md aspect-square rounded-3xl overflow-hidden p-2 bg-gradient-to-br from-sky-400/30 via-indigo-500/20 to-purple-500/30 border border-white/10 shadow-2xl">
@@ -49,10 +49,10 @@ export default function About({ dict, lang = "vi" }) {
 
         {/* Right: Story & Details */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           className="lg:col-span-7 flex flex-col"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4 w-fit">
