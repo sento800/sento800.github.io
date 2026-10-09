@@ -94,16 +94,16 @@ export default function Hero({ dict, lang = "vi" }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="lg:col-span-5 relative py-4 sm:py-6"
+          className="lg:col-span-5 relative py-6 px-3 sm:px-4"
         >
           {/* Glowing aura background */}
           <div className="absolute -inset-2 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl blur-2xl opacity-20 -z-10" />
 
-          {/* Floating Pill Badges - Perfectly Symmetrical Top & Bottom Alignment */}
+          {/* Floating Pill Badges - Symmetrical Diagonal (Top-Right & Bottom-Left) */}
           <motion.div
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -top-5 right-2 sm:-right-4 bg-slate-900/95 border border-indigo-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
+            className="absolute -top-5 -right-3 sm:-right-4 bg-slate-900/95 border border-indigo-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
           >
             <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold shrink-0">
               🎨
@@ -117,7 +117,7 @@ export default function Hero({ dict, lang = "vi" }) {
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute -bottom-5 right-2 sm:-right-4 bg-slate-900/95 border border-sky-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
+            className="absolute -bottom-5 -left-3 sm:-left-4 bg-slate-900/95 border border-sky-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
           >
             <div className="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold shrink-0">
               ⚡
@@ -130,7 +130,7 @@ export default function Hero({ dict, lang = "vi" }) {
 
           {/* Code IDE Card */}
           <div className="glass-card rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden">
-            {/* Window header */}
+            {/* Window header: macOS controls and status on left, file tab on center, right clear */}
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs">
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-1.5">
@@ -202,8 +202,8 @@ export default function Hero({ dict, lang = "vi" }) {
               <p>&#125;;</p>
             </div>
 
-            {/* Quick action bar inside card */}
-            <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs">
+            {/* Quick action bar inside card: shifted to right so bottom-left badge does not overlap */}
+            <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center justify-end gap-3 text-xs">
               <div className="flex items-center gap-3">
                 <span className="text-slate-400 flex items-center gap-1.5">
                   <span className="text-emerald-400 font-bold">✓</span> {dict?.hero?.verified_freelancer || "Verified Freelancer"}
