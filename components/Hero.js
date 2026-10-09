@@ -186,34 +186,34 @@ export default function Hero({ dict, lang = "vi" }) {
             </div>
           </div>
 
-          {/* Floating Pill Badges */}
-          <motion.div
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-5 left-2 sm:-left-2 bg-slate-900/95 border border-sky-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
-          >
-            <div className="w-8 h-8 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold shrink-0">
-              ⚡
-            </div>
-            <div className="whitespace-nowrap">
-              <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
-              <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
-            </div>
-          </motion.div>
+          {/* Feature Highlight Cards - Symmetrical & Balanced */}
+          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <motion.div
+              whileHover={{ y: -2 }}
+              className="glass-card rounded-xl p-3.5 border border-sky-500/20 bg-slate-900/80 flex items-center gap-3 shadow-lg hover:border-sky-500/40 transition-all duration-200"
+            >
+              <div className="w-9 h-9 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-base shrink-0">
+                ⚡
+              </div>
+              <div className="min-w-0">
+                <div className="text-xs font-bold text-white truncate">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
+                <div className="text-[11px] text-slate-400 truncate">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
+              </div>
+            </motion.div>
 
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            className="absolute -top-5 right-2 sm:right-0 bg-slate-900/95 border border-indigo-500/30 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
-          >
-            <div className="w-8 h-8 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold shrink-0">
-              🎨
-            </div>
-            <div className="whitespace-nowrap">
-              <div className="text-xs font-bold text-white">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
-              <div className="text-[10px] text-slate-400">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
-            </div>
-          </motion.div>
+            <motion.div
+              whileHover={{ y: -2 }}
+              className="glass-card rounded-xl p-3.5 border border-indigo-500/20 bg-slate-900/80 flex items-center gap-3 shadow-lg hover:border-indigo-500/40 transition-all duration-200"
+            >
+              <div className="w-9 h-9 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-base shrink-0">
+                🎨
+              </div>
+              <div className="min-w-0">
+                <div className="text-xs font-bold text-white truncate">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
+                <div className="text-[11px] text-slate-400 truncate">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
+              </div>
+            </motion.div>
+          </div>
         </motion.div>
       </div>
 
