@@ -94,129 +94,179 @@ export default function Hero({ dict, lang = "vi" }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="lg:col-span-5 relative px-2 sm:px-3"
+          className="lg:col-span-5 relative"
         >
           {/* Glowing aura background */}
-          <div className="absolute -inset-2 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl blur-2xl opacity-20 -z-10" />
+          <div className="absolute -inset-2 bg-gradient-to-r from-sky-500/20 via-indigo-500/20 to-purple-500/20 rounded-3xl blur-2xl opacity-50 -z-10" />
 
           {/* Code IDE Card */}
-          <div className="glass-card rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-visible">
+          <div className="glass-card rounded-2xl p-5 sm:p-6 border border-white/10 shadow-2xl relative">
             {/* Window header */}
-            <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs">
-              <div className="flex items-center gap-3">
+            <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-white/10 text-xs">
+              <div className="flex items-center gap-2.5">
                 <div className="flex items-center gap-1.5">
                   <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
                   <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                 </div>
-                <span className="text-emerald-400 font-mono text-[11px] font-semibold flex items-center gap-1.5 pl-2.5 border-l border-white/10">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  Online
-                </span>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 text-slate-300 font-mono text-[11px] border border-white/5">
+                  <svg className="w-3.5 h-3.5 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 12l10 5 10-5M2 17l10 5 10-5" />
+                  </svg>
+                  <span>developer.config.ts</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 text-slate-400 font-mono text-[11px]">
-                <svg className="w-3.5 h-3.5 text-sky-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                </svg>
-                <span>developer.config.ts</span>
+              <span className="text-emerald-400 font-mono text-[11px] font-semibold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Online
+              </span>
+            </div>
+
+            {/* Code lines with authentic IDE line numbers */}
+            <div className="font-mono text-xs sm:text-sm leading-relaxed space-y-1.5 text-slate-300">
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">01</span>
+                <p>
+                  <span className="text-purple-400 font-semibold">const</span>{" "}
+                  <span className="text-sky-300 font-semibold">freelancer</span> = &#123;
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">02</span>
+                <p className="pl-2">
+                  <span className="text-slate-400">name:</span>{" "}
+                  <span className="text-emerald-300">&quot;{dict?.hero?.name || "Nguyen Dinh Phu"}&quot;</span>,
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">03</span>
+                <p className="pl-2">
+                  <span className="text-slate-400">role:</span>{" "}
+                  <span className="text-emerald-300">&quot;{dict?.hero?.role || "Frontend Developer"}&quot;</span>,
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">04</span>
+                <p className="pl-2">
+                  <span className="text-slate-400">status:</span>{" "}
+                  <span className="text-sky-300">&apos;AVAILABLE_FOR_HIRE&apos;</span>,
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">05</span>
+                <p className="pl-2">
+                  <span className="text-slate-400">coreTech:</span> [
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">06</span>
+                <div className="pl-4 flex flex-wrap gap-1.5 my-0.5">
+                  {["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion"].map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20 text-[10px] sm:text-[11px]"
+                    >
+                      &quot;{t}&quot;
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">07</span>
+                <p className="pl-2">],</p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">08</span>
+                <p className="pl-2">
+                  <span className="text-slate-400">commitments:</span> &#123;
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">09</span>
+                <p className="pl-4">
+                  <span className="text-slate-400">delivery:</span>{" "}
+                  <span className="text-amber-300">&quot;{dict?.hero?.delivery_commitment || "Strictly on schedule"}&quot;</span>,
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">10</span>
+                <p className="pl-4">
+                  <span className="text-slate-400">quality:</span>{" "}
+                  <span className="text-amber-300">&quot;{dict?.hero?.quality_commitment || "Pixel-perfect & clean code"}&quot;</span>,
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">11</span>
+                <p className="pl-4">
+                  <span className="text-slate-400">performance:</span>{" "}
+                  <span className="text-amber-300">&quot;{dict?.hero?.performance_commitment || "95+ Lighthouse Score"}&quot;</span>
+                </p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">12</span>
+                <p className="pl-2">&#125;</p>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <span className="text-slate-600 select-none text-[11px] w-4 text-right shrink-0">13</span>
+                <p>&#125;;</p>
               </div>
             </div>
 
-            {/* Top Badge: Below top divider, protruding slightly to the right */}
-            <motion.div
-              animate={{ y: [0, -4, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-16 -right-2 sm:-right-4 bg-slate-900/95 border border-indigo-500/30 px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 backdrop-blur-md z-20"
-            >
-              <div className="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0">
-                🎨
-              </div>
-              <div className="whitespace-nowrap font-sans">
-                <div className="text-xs font-bold text-white">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
-                <div className="text-[10px] text-slate-400">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
-              </div>
-            </motion.div>
-
-            {/* Code lines */}
-            <div className="font-mono text-xs sm:text-sm leading-relaxed space-y-2 text-slate-300">
-              <p>
-                <span className="text-purple-400 font-semibold">const</span>{" "}
-                <span className="text-sky-300 font-semibold">freelancer</span> = &#123;
-              </p>
-              <p className="pl-4">
-                <span className="text-slate-400">name:</span>{" "}
-                <span className="text-emerald-300">&quot;{dict?.hero?.name || "Nguyen Dinh Phu"}&quot;</span>,
-              </p>
-              <p className="pl-4">
-                <span className="text-slate-400">role:</span>{" "}
-                <span className="text-emerald-300">&quot;{dict?.hero?.role || "Frontend Developer"}&quot;</span>,
-              </p>
-              <p className="pl-4">
-                <span className="text-slate-400">status:</span>{" "}
-                <span className="text-sky-300">&apos;AVAILABLE_FOR_HIRE&apos;</span>,
-              </p>
-              <p className="pl-4">
-                <span className="text-slate-400">coreTech:</span> [
-              </p>
-              <div className="pl-8 flex flex-wrap gap-1.5 my-1">
-                {["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion"].map((t) => (
-                  <span
-                    key={t}
-                    className="px-2 py-0.5 rounded bg-sky-500/10 text-sky-300 border border-sky-500/20 text-[11px]"
-                  >
-                    &quot;{t}&quot;
-                  </span>
-                ))}
-              </div>
-              <p className="pl-4">],</p>
-              <p className="pl-4">
-                <span className="text-slate-400">commitments:</span> &#123;
-              </p>
-              <p className="pl-8">
-                <span className="text-slate-400">delivery:</span>{" "}
-                <span className="text-amber-300">&quot;{dict?.hero?.delivery_commitment || "Strictly on schedule"}&quot;</span>,
-              </p>
-              <p className="pl-8">
-                <span className="text-slate-400">quality:</span>{" "}
-                <span className="text-amber-300">&quot;{dict?.hero?.quality_commitment || "Pixel-perfect & clean code"}&quot;</span>,
-              </p>
-              <p className="pl-8">
-                <span className="text-slate-400">performance:</span>{" "}
-                <span className="text-amber-300">&quot;{dict?.hero?.performance_commitment || "95+ Lighthouse Score"}&quot;</span>
-              </p>
-              <p className="pl-4">&#125;</p>
-              <p>&#125;;</p>
-
-              {/* Bottom Badge: Positioned below }; and shifted outwards to the left */}
-              <div className="pt-2 -mb-1">
+            {/* Feature Highlights: Integrated Modern Dual-Badge Dock */}
+            <div className="mt-5 pt-4 border-t border-white/10 space-y-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <motion.div
-                  animate={{ y: [0, 3, 0] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative -left-2 sm:-left-4 bg-slate-900/95 border border-sky-500/30 px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 backdrop-blur-md w-fit z-20"
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className="rounded-xl p-2.5 sm:p-3 bg-gradient-to-br from-sky-500/10 via-slate-900/60 to-slate-900/80 border border-sky-500/25 flex items-center gap-2.5 shadow-lg shadow-sky-500/5 hover:border-sky-500/40 transition-all duration-200"
                 >
-                  <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_10px_rgba(14,165,233,0.3)]">
                     ⚡
                   </div>
-                  <div className="whitespace-nowrap font-sans">
-                    <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
-                    <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-bold text-white truncate">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
+                    <div className="text-[10px] text-sky-300/80 truncate font-medium">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className="rounded-xl p-2.5 sm:p-3 bg-gradient-to-br from-indigo-500/10 via-slate-900/60 to-slate-900/80 border border-indigo-500/25 flex items-center gap-2.5 shadow-lg shadow-indigo-500/5 hover:border-indigo-500/40 transition-all duration-200"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_10px_rgba(99,102,241,0.3)]">
+                    🎨
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-bold text-white truncate">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
+                    <div className="text-[10px] text-indigo-300/80 truncate font-medium">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
                   </div>
                 </motion.div>
               </div>
-            </div>
 
-            {/* Quick action bar inside card */}
-            <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
-              <span className="text-slate-400 flex items-center gap-1.5">
-                <span className="text-emerald-400 font-bold">✓</span> {dict?.hero?.verified_freelancer || "Verified Freelancer"}
-              </span>
-              <Link
-                href={`/${lang}#contact`}
-                className="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 group"
-              >
-                <span>{dict?.hero?.request_quote || "Request Quotation"}</span>
-                <span className="transition-transform group-hover:translate-x-1">→</span>
-              </Link>
+              {/* Action bar inside card */}
+              <div className="pt-2 flex items-center justify-between text-xs">
+                <span className="text-slate-400 flex items-center gap-1.5">
+                  <span className="text-emerald-400 font-bold">✓</span> {dict?.hero?.verified_freelancer || "Verified Freelancer"}
+                </span>
+                <Link
+                  href={`/${lang}#contact`}
+                  className="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 group"
+                >
+                  <span>{dict?.hero?.request_quote || "Request Quotation"}</span>
+                  <span className="transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </motion.div>
