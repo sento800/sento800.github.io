@@ -131,7 +131,7 @@ export default function Hero({ dict, lang = "vi" }) {
               <div className="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0">
                 🎨
               </div>
-              <div className="whitespace-nowrap">
+              <div className="whitespace-nowrap font-sans">
                 <div className="text-xs font-bold text-white">{dict?.hero?.badge_figma_title || "Pixel-Perfect UI"}</div>
                 <div className="text-[10px] text-slate-400">{dict?.hero?.badge_figma_desc || "1:1 Figma Translation"}</div>
               </div>
@@ -185,40 +185,38 @@ export default function Hero({ dict, lang = "vi" }) {
                 <span className="text-amber-300">&quot;{dict?.hero?.performance_commitment || "95+ Lighthouse Score"}&quot;</span>
               </p>
               <p className="pl-4">&#125;</p>
-              <p>&#125;;</p>
+
+              {/* Closing line with Sub-second Speed badge placed directly next to }; */}
+              <div className="flex items-center gap-3 pt-1">
+                <p>&#125;;</p>
+                <motion.div
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                  className="bg-slate-900/90 border border-sky-500/30 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-md flex items-center gap-2.5 backdrop-blur-md w-fit"
+                >
+                  <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0">
+                    ⚡
+                  </div>
+                  <div className="whitespace-nowrap font-sans">
+                    <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
+                    <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
 
-            {/* Quick action bar: After bottom horizontal divider line */}
-            <div className="mt-5 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-              {/* Bottom Badge: Inside card, below horizontal divider line on the left */}
-              <motion.div
-                animate={{ y: [0, 4, 0] }}
-                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                className="bg-slate-900/90 border border-sky-500/30 px-3.5 py-2 rounded-xl shadow-md flex items-center gap-2.5 backdrop-blur-md w-fit"
+            {/* Quick action bar inside card */}
+            <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+              <span className="text-slate-400 flex items-center gap-1.5">
+                <span className="text-emerald-400 font-bold">✓</span> {dict?.hero?.verified_freelancer || "Verified Freelancer"}
+              </span>
+              <Link
+                href={`/${lang}#contact`}
+                className="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 group"
               >
-                <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0">
-                  ⚡
-                </div>
-                <div className="whitespace-nowrap">
-                  <div className="text-xs font-bold text-white">{dict?.hero?.badge_speed_title || "Sub-second Speed"}</div>
-                  <div className="text-[10px] text-slate-400">{dict?.hero?.badge_speed_desc || "Core Web Vitals Optimized"}</div>
-                </div>
-              </motion.div>
-
-              {/* Action links on the right */}
-              <div className="flex items-center gap-3 self-end sm:self-auto">
-                <span className="text-slate-400 flex items-center gap-1.5">
-                  <span className="text-emerald-400 font-bold">✓</span> {dict?.hero?.verified_freelancer || "Verified Freelancer"}
-                </span>
-                <span className="text-white/20 hidden sm:inline">•</span>
-                <Link
-                  href={`/${lang}#contact`}
-                  className="text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 group"
-                >
-                  <span>{dict?.hero?.request_quote || "Request Quotation"}</span>
-                  <span className="transition-transform group-hover:translate-x-1">→</span>
-                </Link>
-              </div>
+                <span>{dict?.hero?.request_quote || "Request Quotation"}</span>
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </div>
           </div>
         </motion.div>
