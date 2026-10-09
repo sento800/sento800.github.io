@@ -94,13 +94,13 @@ export default function Hero({ dict, lang = "vi" }) {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="lg:col-span-5 relative"
+          className="lg:col-span-5 relative px-2 sm:px-3"
         >
           {/* Glowing aura background */}
           <div className="absolute -inset-2 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-3xl blur-2xl opacity-20 -z-10" />
 
           {/* Code IDE Card */}
-          <div className="glass-card rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden">
+          <div className="glass-card rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-visible">
             {/* Window header */}
             <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 text-xs">
               <div className="flex items-center gap-3">
@@ -122,11 +122,11 @@ export default function Hero({ dict, lang = "vi" }) {
               </div>
             </div>
 
-            {/* Top Badge: Inside card, below top horizontal divider line on the right */}
+            {/* Top Badge: Below top divider, protruding slightly to the right */}
             <motion.div
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-20 right-4 sm:right-6 bg-slate-900/90 border border-indigo-500/30 px-3.5 py-2 rounded-xl shadow-lg flex items-center gap-2.5 backdrop-blur-md z-10"
+              className="absolute top-16 -right-2 sm:-right-4 bg-slate-900/95 border border-indigo-500/30 px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 backdrop-blur-md z-20"
             >
               <div className="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold text-sm shrink-0">
                 🎨
@@ -185,14 +185,14 @@ export default function Hero({ dict, lang = "vi" }) {
                 <span className="text-amber-300">&quot;{dict?.hero?.performance_commitment || "95+ Lighthouse Score"}&quot;</span>
               </p>
               <p className="pl-4">&#125;</p>
+              <p>&#125;;</p>
 
-              {/* Closing line with Sub-second Speed badge placed directly next to }; */}
-              <div className="flex items-center gap-3 pt-1">
-                <p>&#125;;</p>
+              {/* Bottom Badge: Positioned below }; and shifted outwards to the left */}
+              <div className="pt-2 -mb-1">
                 <motion.div
-                  animate={{ y: [0, -3, 0] }}
+                  animate={{ y: [0, 3, 0] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="bg-slate-900/90 border border-sky-500/30 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl shadow-md flex items-center gap-2.5 backdrop-blur-md w-fit"
+                  className="relative -left-2 sm:-left-4 bg-slate-900/95 border border-sky-500/30 px-3.5 py-2 rounded-xl shadow-xl flex items-center gap-2.5 backdrop-blur-md w-fit z-20"
                 >
                   <div className="w-7 h-7 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold text-sm shrink-0">
                     ⚡
